@@ -11,10 +11,33 @@ export default function Document() {
       />
       <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" />
       <link href="https://fonts.cdnfonts.com/css/calibre" rel="stylesheet" />
+
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" async></script>
+
       <Head />
-      <body className="bg-white dark:bg-black text-gray-900 dark:text-white scrollbar-thin scrollbar-thumb-gray-600">
+      <body className="bg-white text-gray-900 scrollbar-thin scrollbar-thumb-gray-600 dark:bg-black dark:text-white">
         <Main />
         <NextScript />
+
+        <script dangerouslySetInnerHTML={{
+            __html: `
+              declare global {
+                interface Window {
+                  netlifyIdentity: any;
+                }
+              }
+
+              if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", ((user) => {
+                  if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                      document.location.href = "/admin/";
+                    });
+                  }
+                }));
+              }
+          `}}/>
+
       </body>
     </Html>
   );
