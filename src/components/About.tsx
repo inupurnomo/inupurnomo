@@ -1,6 +1,6 @@
 import SectionTitle from "./part/SectionTitle";
 import Image from "next/image";
-import {profileImg} from "../../public/assets";
+import {profileImg} from "public/assets";
 import {
   SiPhp,
   SiMysql,

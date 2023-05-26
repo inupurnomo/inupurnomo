@@ -17,7 +17,7 @@ import BackToTop from "@/components/part/BackToTop";
 export default function Home() {
   return (
     <>
-      <Layout>
+      <Layout customMeta={{title: 'INUPURNOMO - Fullstack Developer'}}>
         <Navbar />
         <div className="w-full items-center justify-between gap-20 xl:flex">
           <motion.div

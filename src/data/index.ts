@@ -1,4 +1,4 @@
-import {proj1, proj2, proj3} from "../../public/assets";
+import {proj1, proj2, proj3} from "public/assets";
 import {socialMedia} from "./social";
 
 const Personal = {

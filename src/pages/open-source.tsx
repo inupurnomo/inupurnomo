@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 
 export default function OpenSource({data}:any) {
   return (
-    <Layout customMeta={{title: 'Open Source - Diggy'}}>
+    <Layout customMeta={{title: 'Open Source - INUPURNOMO'}}>
       <main className="w-full overflow-x-hidden overflow-y-hidden bg-light1 font-bodyFont text-textDark dark:bg-dark1 dark:text-textLight">
         <div className="w-full items-center justify-between gap-20 xl:flex">
           <motion.div
