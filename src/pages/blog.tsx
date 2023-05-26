@@ -20,11 +20,11 @@ export default function Blog({posts}: IndexProps) {
       <h1 className="text-3xl font-semibold">All Posts</h1>
       {posts &&
         posts.map((post) => (
-          <article key={post.slug} className="mt-12">
+          <article key={post.slug} className="mt-12 pb-7 border-b dark:border-slate-100/40">
             <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
               {format(parseISO(post.date!), "MMMM dd, yyyy")}
             </p>
-            <h1 className="mb-2 text-xl">
+            <h1 className="mb-2 text-2xl">
               <Link
                 as={`/blog/${post.slug}`}
                 href={`/blog/[slug]`}

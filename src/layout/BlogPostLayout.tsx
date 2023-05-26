@@ -3,7 +3,7 @@ import {MetaProps} from "@/types/layout";
 import Head from "@/components/blog/Head";
 import BlogFooter from "@/components/blog/BlogFooter";
 import BlogNavigation from "@/components/blog/BlogNavigation";
-import Header from "@/components/blog/Header";
+import Sidebar from "@/components/blog/Header";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -19,13 +19,10 @@ export default function BlogLayout({
   return (
     <>
       <Head customMeta={customMeta} />
-      <main className="flex min-h-screen w-full flex-col shadow-md lg:flex-row">
-        <header className="flex-row border-slate-100/40 dark:border-r lg:w-1/4 lg:shadow-md">
-          <Header />
-        </header>
-        <div className="flex flex-col justify-between lg:w-3/4">
-          <div className="content">
-            <BlogNavigation />
+      <BlogNavigation />
+      <main className="flex min-h-screen w-full flex-col lg:items-center">
+        <div className="flex max-w-contentContainer flex-col justify-between pt-6">
+          <div className="content rounded-2xl shadow-md dark:border-slate-100/30 border">
             <div className="rounded-sm px-8">
               <div className="w-full px-8 py-8">{children}</div>
             </div>

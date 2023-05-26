@@ -4,7 +4,7 @@ import ThemeSwitch from "@/components/blog/ThemeSwitch";
 
 export default function BlogNavigation(): JSX.Element {
   return (
-    <nav className="w-full text-gray-900 dark:text-white flex mx-auto h-20 bg-white/40 dark:bg-black/40 backdrop-blur-sm sticky top-0 shadow-md px-16">
+    <nav className="w-full text-gray-900 dark:text-white flex mx-auto h-20 bg-white/40 dark:bg-black/40 backdrop-blur-sm sticky top-0 shadow-md px-16 dark:border-b dark:border-slate-100/40">
       <div className="w-full flex mx-auto h-full justify-between items-center">
         <div className="text-xl font-bold">
           <Link className="text-black dark:text-white" href={"/blog"}>Blog</Link>
