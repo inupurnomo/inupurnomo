@@ -12,8 +12,8 @@ type PostItems = {
 };
 
 export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
-  const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(POSTS_PATH, `${realSlug}.md`);
+  const realSlug = slug.replace(/\.mdx$/, '');
+  const fullPath = join(POSTS_PATH, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
