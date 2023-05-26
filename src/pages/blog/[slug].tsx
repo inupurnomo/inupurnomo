@@ -71,7 +71,7 @@ const PostPage = ({source, frontMatter}: PostPageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-  const postFilePath = path.join(POSTS_PATH, `${params!.slug}.md`);
+  const postFilePath = path.join(POSTS_PATH, `${params!.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const {content, data} = matter(source);
@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = postFilePaths
     // Remove file extensions for page paths
-    .map((path) => path.replace(/\.md?$/, ""))
+    .map((path) => path.replace(/\.mdx?$/, ""))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({params: {slug}}));
 
