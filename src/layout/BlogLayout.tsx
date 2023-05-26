@@ -20,7 +20,7 @@ export default function BlogLayout({
     <>
       <Head customMeta={customMeta} />
       <main className="flex min-h-screen w-full flex-col shadow-md lg:flex-row">
-        <header className="flex-row border-slate-100/40 dark:border-r lg:w-1/4 lg:shadow-md">
+        <header className="flex-row border-slate-100/40 dark:border-r lg:w-1/4 lg:shadow-md px-8 py-6">
           <Header />
         </header>
         <div className="flex flex-col justify-between lg:w-3/4">
