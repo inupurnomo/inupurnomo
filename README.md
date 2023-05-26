@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi 👋, I'm Ilham Ibnu Purnomo<br>A passionate frontend developer from Bangladesh.<br>👨‍💻 All of my projects are available at https://github.com/IsmailAlamKhan?tab=repositories<br>💬 Ask me about React, Next, Vue, CI, Laravel, HTML, CSS, JavaScript, etc<br>📫 How to reach me contact@inupurnomo.com<br>🌱 I’m currently learning Rust
+Hi 👋, I'm Ilham Ibnu Purnomo<br>A passionate frontend developer from Bandung, Indonesia.<br>👨‍💻 All of my projects are available at https://github.com/inupurnomo?tab=repositories<br>💬 Ask me about React, Next, Vue, CI, Laravel, HTML, CSS, JavaScript, etc<br>📫 How to reach me contact@inupurnomo.com<br>🌱 I’m currently learning Rust
 
 
 ## 🌐 Socials:
