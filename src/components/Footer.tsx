@@ -21,7 +21,6 @@ export default function Footer() {
             inupurnomo - All right reserved.
           </Link>
         </div>
-
       </motion.div>
     </footer>
   );
