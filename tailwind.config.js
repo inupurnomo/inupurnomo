@@ -34,7 +34,7 @@ module.exports = {
         bodyColor: "#404258",
         bodyDark: "#404258",
         bodyLight: "#CDC2AE",
-        textPrimary: "#DD7732",
+        textPrimary: "#FD5D5D",
         textLink: "#0E8388",
         textLight: "#ccd6f6",
         textDark: "#1A120B",
