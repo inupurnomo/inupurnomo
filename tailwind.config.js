@@ -9,6 +9,7 @@ module.exports = {
       contentContainer: "1140px",
       containerSmall: "1024px",
       containerxs: "768px",
+      shorlink: "667px",
     },
     extend: {
       screens: {
