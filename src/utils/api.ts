@@ -1,9 +1,9 @@
 import fs from "fs";
-import { join } from "path";
+import {join} from "path";
 import matter from "gray-matter";
 import slugify from "./slugify";
 
-const postsDirectory = join(process.cwd(), "contents");
+const postsDirectory = join(process.cwd(), "src/contents");
 
 export function getPostSlugs() {
   const files = fs.readdirSync(postsDirectory);
@@ -29,7 +29,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   const fullPath = join(postsDirectory, `${fileName}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const {data, content} = matter(fileContents);
 
   type Items = {
     [key: string]: string | string[];
@@ -65,7 +65,7 @@ export function getCategorySlugs(category: string) {
 
   for (let file of files) {
     const fullPath = join(postsDirectory, file);
-    const { data } = matter(fs.readFileSync(fullPath, "utf8"));
+    const {data} = matter(fs.readFileSync(fullPath, "utf8"));
     if (slugify(data.category) !== category) continue;
     slugs.push(data.slug ? data.slug : file.replace(/\.md$/, ""));
   }
@@ -94,7 +94,7 @@ export function getTagSlugs(tag: string) {
 
   for (let file of files) {
     const fullPath = join(postsDirectory, file);
-    const { data } = matter(fs.readFileSync(fullPath, "utf8"));
+    const {data} = matter(fs.readFileSync(fullPath, "utf8"));
 
     if (!data.tags) continue;
 

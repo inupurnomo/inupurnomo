@@ -1,54 +1,79 @@
-import Layout from "@/layout/Layout";
+/* eslint-disable react/no-unescaped-entities */
+import type {GetStaticProps, NextPage} from "next";
 import AppHead from "@/components/AppHead";
-import Navbar from "@/components/Navbar";
-import LeftSide from "@/components/LeftSide";
-import RightSide from "@/components/RightSide";
-import {motion} from "framer-motion";
-import Banner from "@/section/Banner";
-import About from "@/section/About";
-import Experience from "@/section/Experience";
-import Education from "@/section/Education";
-import Project from "@/section/Project";
-import Archive from "@/section/Archive";
-import Contact from "@/section/Contact";
+import Loader from "@/components/Loader";
+import SkipToMain from "@/components/SkipToMain";
+import Header from "@/components/Header";
+import SocialLinks from "@/components/SocialLinks";
+import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ProjectSection from "@/components/sections/ProjectSection";
+import BlogSection from "@/components/sections/BlogSection";
+import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/Footer";
-import BackToTop from "@/components/part/BackToTop";
 
-export default function Home() {
+import {getAllPosts} from "@/utils/api";
+import {MdxMeta} from "@/pages/blog/posts/[slug]";
+import WorkSection from "@/components/sections/WorkSection";
+
+type Props = {
+  blogPosts: MdxMeta[];
+};
+
+export const meta = {
+  description:
+    "INUPURNOMO is a full-stack developer based in Bandung, Indonesia. He is passionate about writing codes and developing web applications to solve real-life challenges.",
+  author: "INUPURNOMO",
+  type: "website",
+  ogImage: `${process.env.NEXT_PUBLIC_URL}/inupurnomo-og.png`,
+  siteName: "INUPURNOMO",
+  imageAlt: "INUPURNOMO portfolio website",
+};
+
+export default function Home({blogPosts}: Props) {
   return (
     <>
-      <Layout customMeta={{title: "INUPURNOMO - Fullstack Developer"}}>
-        <Navbar />
-        <div className="w-full items-center justify-between gap-20 xl:flex">
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 1.5}}
-            className="fixed bottom-0 left-0 z-50 w-32 xl:inline-flex"
-          >
-            <LeftSide />
-          </motion.div>
-          <div className="mx-auto w-full">
-            <Banner />
-            <About />
-            <Experience />
-            <Education />
-            <Project />
-            <Archive />
-            <Contact />
-            <Footer />
-            <BackToTop />
-          </div>
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 1.5}}
-            className="fixed -right-6 top-0 w-32 xl:inline-flex"
-          >
-            <RightSide />
-          </motion.div>
+      <AppHead
+        title="INUPURNOMO - A Full-stack Developer"
+        url={`${process.env.NEXT_PUBLIC_URL}`}
+        meta={meta}
+      />
+      {/* <Loader>INUPURNOMO</Loader> */}
+      <div className="bg-bglight dark:bg-bgdark overflow-hidden">
+        <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
+          <SkipToMain />
+          <Header />
+          <main id="main">
+            <HeroSection />
+            <AboutSection />
+            <ProjectSection />
+            {/* <WorkSection /> */}
+            <BlogSection posts={blogPosts} />
+            <ContactSection />
+          </main>
+          <SocialLinks page="index" />
+          <Footer />
         </div>
-      </Layout>
+      </div>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const blogPosts = getAllPosts([
+    "coverImage",
+    "coverImageAlt",
+    "slug",
+    "title",
+    "excerpt",
+    "datetime",
+    "featured",
+    "tags",
+  ]);
+
+  return {
+    props: {
+      blogPosts,
+    },
+  };
+};

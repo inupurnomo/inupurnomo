@@ -17,11 +17,11 @@ type Props = {
   url?: string;
 };
 
-const AppHead: React.FC<Props> = ({
+export default function AppHead({
   title,
   url = `${process.env.NEXT_PUBLIC_URL}/blog`,
   meta,
-}) => {
+}: Props) {
   let author = "inupurnomo";
   let description =
     "Articles about programming, coding, technologies, software engineering, my personal projects and my experiences.";
@@ -43,8 +43,8 @@ const AppHead: React.FC<Props> = ({
     ogImageAlt = meta.ogImageAlt && meta.ogImageAlt;
   }
 
-  let appOgImage = `${process.env.NEXT_PUBLIC_URL}/satnaing-blog-og.png`;
-  let appOgImageAlt = "Sat Naing's Blog";
+  let appOgImage = `${process.env.NEXT_PUBLIC_URL}/inupurnomo-og.png`;
+  let appOgImageAlt = "INUPURNOMO's Blog";
 
   if (ogImage) {
     appOgImage = ogImage;
@@ -75,5 +75,3 @@ const AppHead: React.FC<Props> = ({
     </Head>
   );
 };
-
-export default AppHead;

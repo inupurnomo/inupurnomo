@@ -1,51 +1,48 @@
-import Head from "next/head";
-import LeftSide from "@/components/LeftSide";
-import RightSide from "@/components/RightSide";
-import Page404 from "@/components/Page404";
-import {motion} from "framer-motion";
+import type {NextPage} from "next";
+
+import AppHead from "@/components/AppHead";
+import Footer from "@/components/Footer";
+import LinkButton from "@/components/LinkButton";
+
+import {meta} from "@/pages";
+import Link from "next/link";
 
 export default function Custom404() {
   return (
     <>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Page Not Found" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Page Not Found | INUPURNOMO</title>
-
-        {/*
-          - favicon
-        */}
-        <link
-          rel="shortcut icon"
-          href="./assets/icons/favicon.ico"
-          type="image/x-icon"
-        />
-      </Head>
-      <main className="w-full overflow-x-hidden overflow-y-hidden font-bodyFont text-textDark dark:text-textLight">
-        <div className="w-full items-center justify-between gap-20 xl:flex">
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 1.5}}
-            className="fixed bottom-0 left-0 w-32 xl:inline-flex"
-          >
-            <LeftSide />
-          </motion.div>
-          <div className="mx-auto w-full">
-            <Page404 />
+      <AppHead
+        title="404 - Diggy"
+        url={`${process.env.NEXT_PUBLIC_URL}`}
+        meta={meta}
+      />
+      <div className="bg-bglight dark:bg-bgdark overflow-hidden">
+        <div className="h-screen flex flex-col justify-center selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
+          <div className="flex justify-center items-center flex-col mt-auto">
+            <h1 className="text-8xl xs:text-9xl font-bold text-marrsgreen dark:text-carrigreen">
+              404
+            </h1>
+            <div className="text-lg xs:text-2xl my-2">
+              Page Not Found :&apos;&#40;
+            </div>
+            <div className="max-w-xs text-center mb-10">
+              It seems the page you&apos;re looking for does not exist, or there
+              might be a typo in the URL.
+            </div>
+            <div className="flex space-x-4">
+              <LinkButton href="/" outline>
+                Go back Home
+              </LinkButton>
+              <Link
+                href="/blog"
+                className="link flex items-center px-4 lg:text-xl hover:underline"
+              >
+                Go to Blog
+              </Link>
+            </div>
           </div>
-          <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{delay: 1.5}}
-            className="fixed -right-6 top-0 w-32 xl:inline-flex"
-          >
-            <RightSide />
-          </motion.div>
+          <Footer noPadding />
         </div>
-      </main>
+      </div>
     </>
   );
-}
+};
