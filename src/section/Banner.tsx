@@ -1,10 +1,10 @@
 import {motion} from "framer-motion";
-import Button from "./part/Button";
+import Button from "@/components/part/Button";
 import {useTypewriter, Cursor} from "react-simple-typewriter";
 import Link from "next/link";
 import {AiOutlinePhone, AiOutlineMail} from "react-icons/ai";
 import {MdOutlineWhatsapp} from "react-icons/md";
-import TextHover from "./part/TextHover";
+import TextHover from "@/components/part/TextHover";
 import {Personal} from "@/data";
 
 const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

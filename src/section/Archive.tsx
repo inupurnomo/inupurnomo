@@ -1,7 +1,7 @@
 import {useState} from "react";
-import ArchiveCard from "./part/ArchiveCard";
+import ArchiveCard from "@/components/part/ArchiveCard";
 import {motion} from "framer-motion";
-import Button from "./part/Button";
+import Button from "@/components/part/Button";
 
 export default function Archive() {
   const [showMore, setShowMore] = useState(false);

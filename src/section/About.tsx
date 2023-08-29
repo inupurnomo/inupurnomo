@@ -1,4 +1,4 @@
-import SectionTitle from "./part/SectionTitle";
+import SectionTitle from "@/components/part/SectionTitle";
 import Image from "next/image";
 import {profileImg} from "public/assets";
 import {

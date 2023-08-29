@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {motion} from "framer-motion";
-import SectionTitle from "./part/SectionTitle";
-import ReactBD from "./works/ReactBD";
-import Google from "./works/Google";
-import Apple from "./works/Apple";
-import Splash from "./works/Splash";
-import Amazon from "./works/Amazon";
+import SectionTitle from "@/components/part/SectionTitle";
+import ReactBD from "@/components/works/ReactBD";
+import Google from "@/components/works/Google";
+import Apple from "@/components/works/Apple";
+import Splash from "@/components/works/Splash";
+import Amazon from "@/components/works/Amazon";
 
 export default function Experience() {
   const [workReactbd, setWorkReactbd] = useState(true);

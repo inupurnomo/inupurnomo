@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import Button from "./part/Button";
+import Button from "@/components/part/Button";
 export default function Contact() {
   return (
     <section

@@ -1,23 +1,23 @@
 import Layout from "@/layout/Layout";
-import Head from "next/head";
+import AppHead from "@/components/AppHead";
 import Navbar from "@/components/Navbar";
 import LeftSide from "@/components/LeftSide";
 import RightSide from "@/components/RightSide";
 import {motion} from "framer-motion";
-import Banner from "@/components/Banner";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
-import Project from "@/components/Project";
-import Archive from "@/components/Archive";
-import Contact from "@/components/Contact";
+import Banner from "@/section/Banner";
+import About from "@/section/About";
+import Experience from "@/section/Experience";
+import Education from "@/section/Education";
+import Project from "@/section/Project";
+import Archive from "@/section/Archive";
+import Contact from "@/section/Contact";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/part/BackToTop";
 
 export default function Home() {
   return (
     <>
-      <Layout customMeta={{title: 'INUPURNOMO - Fullstack Developer'}}>
+      <Layout customMeta={{title: "INUPURNOMO - Fullstack Developer"}}>
         <Navbar />
         <div className="w-full items-center justify-between gap-20 xl:flex">
           <motion.div

@@ -16,7 +16,6 @@ export default function Layout({
   return (
     <>
       <Head customMeta={customMeta} />
-      <header></header>
       <main>
         <div className="w-full overflow-x-hidden overflow-y-hidden font-bodyFont text-textDark dark:text-textLight">
           {children}

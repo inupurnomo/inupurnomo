@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import SectionTitle from "./part/SectionTitle";
+import SectionTitle from "@/components/part/SectionTitle";
 import {Personal} from "@/data";
 
 export default function Education() {

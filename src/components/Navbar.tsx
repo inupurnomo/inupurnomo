@@ -34,7 +34,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="pt fixed top-0 z-50 h-20 w-full bg-light1 bg-opacity-30 text-textDark shadow-navbarShadow backdrop-blur-xl dark:bg-bodyDark dark:bg-opacity-30 dark:text-textLight">
+    <div className="pt fixed top-0 z-50 h-14 w-full bg-light1 bg-opacity-30 text-textDark shadow-navbarShadow backdrop-blur-xl dark:bg-bodyDark dark:bg-opacity-30 dark:text-textLight">
       <div className="mx-auto flex h-full w-full items-center justify-between px-6 py-1 font-titleFont text-2xl mdl:px-12">
         <Link href={"/"}>
           <motion.div
@@ -42,12 +42,12 @@ export default function Navbar() {
             animate={{opacity: 1}}
             transition={{duration: 0.5}}
           >
-            <Image className="w-14" src={logo} alt="logo" priority={true} />
+            <Image className="w-8" src={logo} alt="logo" priority={true} />
             {/* &lt;Dig/&gt; */}
           </motion.div>
         </Link>
-        <div className="hidden items-center gap-7 mdl:inline-flex">
-          <ul className="flex gap-7 text-[13px]">
+        <div className="hidden items-center gap-2 mdl:inline-flex">
+          <ul className="flex gap-4 text-[13px]">
             <Link
               onClick={handleScroll}
               href="#about"
@@ -58,7 +58,7 @@ export default function Navbar() {
                 animate={{y: 0, opacity: 1}}
                 transition={{duration: 0.1, delay: 0.1}}
               >
-                <span className="text-textPrimary">01.</span> About
+                About
               </motion.li>
             </Link>
             <Link
@@ -70,8 +70,7 @@ export default function Navbar() {
                 initial={{y: -10, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
                 transition={{duration: 0.1, delay: 0.2}}
-              >
-                <span className="text-textPrimary">02.</span> Experience
+              >Experience
               </motion.li>
             </Link>
             <Link
@@ -83,8 +82,7 @@ export default function Navbar() {
                 initial={{y: -10, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
                 transition={{duration: 0.1, delay: 0.3}}
-              >
-                <span className="text-textPrimary">03.</span> Work
+              >Work
               </motion.li>
             </Link>
             <Link
@@ -96,8 +94,7 @@ export default function Navbar() {
                 initial={{y: -10, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
                 transition={{duration: 0.1, delay: 0.4}}
-              >
-                <span className="text-textPrimary">04.</span> Contact
+              >Contact
               </motion.li>
             </Link>
             <Link

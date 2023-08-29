@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import SectionTitle from "./part/SectionTitle";
+import SectionTitle from "@/components/part/SectionTitle";
 import Image from "next/image";
 import {TbBrandGithub} from "react-icons/tb";
 import {RxOpenInNewWindow} from "react-icons/rx";
