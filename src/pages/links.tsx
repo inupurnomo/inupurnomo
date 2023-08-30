@@ -53,7 +53,7 @@ export default function Links() {
     <>
       <AppHead
         title="ShortLink | INUPURNOMO"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
+        url={`${process.env.NEXT_PUBLIC_URL}/links`}
         meta={meta}
       />
       <section className="h-screen flex justify-center sm:pt-10 overflow-hidden">

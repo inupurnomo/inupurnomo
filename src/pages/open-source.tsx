@@ -35,7 +35,7 @@ export default function openSource({data}: any) {
     <>
       <AppHead
         title="Open Source | INUPURNOMO"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
+        url={`${process.env.NEXT_PUBLIC_URL}/open-source`}
         meta={meta}
       />
       <Header />

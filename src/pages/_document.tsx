@@ -33,10 +33,13 @@ const Document = () => {
         />
         <meta name="msapplication-TileColor" content="#5bbad5" />
         <meta name="theme-color" content="#1d2a35" />
+        {/* google verification */}
         <meta
           name="google-site-verification"
           content="fBdMyULMEPFg43PelSkTyH5FCkC9NRMHlUw6Lu3vPdY"
         />
+        {/* bing verification */}
+        <meta name="msvalidate.01" content="872E0805F6B02CA8A7AEE37CF7207F9F" />
 
         <link
           href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
