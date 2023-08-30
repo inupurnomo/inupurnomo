@@ -94,7 +94,7 @@ export default function HeroSection() {
         UI/UX DESIGNER WEB DEVELOPER SOFTWARE ENGINER FULL-STACK DEVELOPER
       </span>
 
-      <div className="image-animation z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:-mt-20 px-0 mx-auto lg:p-0 lg:basis-1/3">
+      <div className="z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:-mt-20 px-0 mx-auto lg:p-0 lg:basis-1/3">
         <div className="h-[440px] md:w-1/2 pb-[70%] relative flex justify-center items-center">
           <div className="w-32 absolute absolute-x-center bottom-5">
             <video
@@ -118,22 +118,22 @@ export default function HeroSection() {
               <div className="circle-dashed w-64 pb-64 animate-spin-slow ease-in"></div>
             </div>
           </div>
-          <div className="bg-[#0EA5E9] text-sm font-medium absolute bottom-72 -left-20 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-[#0EA5E9] text-sm font-medium absolute bottom-72 left-24 sm:-left-20 md:-left-20 px-4 py-1 rounded-full text-white shadow-lg">
             React.js
           </div>
-          <div className="bg-[#161616] text-sm font-medium absolute bottom-60 -right-44 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-[#161616] text-sm font-medium absolute bottom-60 right-4 sm:-right-44 md:-right-44 px-4 py-1 rounded-full text-white shadow-lg">
             Next.js
           </div>
-          <div className="bg-[#F05340] text-sm font-medium absolute bottom-56 -left-44 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-[#F05340] text-sm font-medium absolute bottom-56 left-4 sm:-left-44 md:-left-44 px-4 py-1 rounded-full text-white shadow-lg">
             Laravel
           </div>
-          <div className="bg-[#0468D7] text-sm font-medium absolute bottom-48 -right-32 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-[#0468D7] text-sm font-medium absolute bottom-48 right-16 sm:-right-32 md:-right-32 px-4 py-1 rounded-full text-white shadow-lg">
             Flutter
           </div>
-          <div className="bg-indigo-700 text-sm font-medium absolute bottom-32 -left-56 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-indigo-700 text-sm font-medium absolute bottom-32 -left-6 sm:-left-52 md:-left-56 px-4 py-1 rounded-full text-white shadow-lg">
             Rest API
           </div>
-          <div className="bg-[#4ba13e] text-sm font-medium absolute bottom-36 -right-56 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="bg-[#4ba13e] text-sm font-medium absolute bottom-36 -right-6 sm:-right-56 md:-right-56 px-4 py-1 rounded-full text-white shadow-lg">
             MongoDB
           </div>
         </div>

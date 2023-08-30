@@ -99,14 +99,14 @@ export default function Header() {
           </Link>
           <nav className="flex items-center">
             <div className="glassmorphism md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none fixed md:static bottom-4 z-30 left-1/2 md:left-auto transform -translate-x-1/2 md:transform-none bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded-xl drop-shadow-lg md:drop-shadow-none">
-              <ul className="flex justify-evenly items-center py-2">
+              <ul className="flex justify-evenly items-center py-2 pt-3">
                 {navLinks.map((navLink) => (
                   <li key={navLink.url}>
                     <a
                       href={navLink.url}
                       className={`text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline ${
                         currentSection === navLink.text.toLocaleLowerCase() &&
-                        "text-marrsgreen dark:text-carrigreen fill-marrsgreen dark:fill-carrigreen"
+                        "text-marrsgreen dark:text-carrilight fill-marrsgreen dark:fill-carrigreen"
                       }`}
                     >
                       <span className="md:hidden">{navLink.svg}</span>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import {useEffect, useRef} from "react";
 import {RoughNotation} from "react-rough-notation";
 import {useTheme} from "next-themes";
+import Link from "next/link";
 
 import ProjectCard from "@/components/ProjectCard";
 import {useSection} from "@/context/section";
@@ -40,7 +41,7 @@ export default function ProjectSection() {
           <h2 className="section-heading">Highlighted Projects</h2>
         </RoughNotation>
       </div>
-      <span className="project-desc text-center block mb-4" ref={elementRef}>
+      <span className="project-desc mb-4 block text-center" ref={elementRef}>
         “Talk is cheap. Show me the code”? I got you. <br />
         Here's some of my open-source projects
       </span>
@@ -49,11 +50,30 @@ export default function ProjectSection() {
           <ProjectCard key={project.title} index={index} project={project} />
         ))}
       </div>
-      <div className="others text-center mb-16">
+      <div className="mt-4 text-center">
+        <Link href={"/archive"} className="link">
+          View Full Project Archive{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="inline-block h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </Link>
+      </div>
+      <div className="others mb-16 text-center">
         Explore my others projects on{" "}
         <a
           href="https://github.com/inupurnomo"
-          className="font-medium underline link-outline text-marrsgreen dark:text-carrigreen whitespace-nowrap"
+          className="link-outline whitespace-nowrap font-medium text-marrsgreen underline dark:text-carrigreen"
         >
           my github profile
         </a>

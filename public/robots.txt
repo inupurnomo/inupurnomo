@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://inupurnomo.com/sitemap.xml
+Sitemap: https://inupurnomo.my.id/sitemap.xml

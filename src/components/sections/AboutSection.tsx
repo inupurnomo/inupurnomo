@@ -120,7 +120,7 @@ export default function AboutSection() {
             </RoughNotation>
           </div>
           <div className="md:grid grid-rows-5 lg:grid-rows-6 grid-cols-5">
-            <div className="col-start-1 col-end-3 row-start-2 row-end-4 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
+            <div className="col-start-1 col-end-3 row-start-2 row-end-4 md:row-start-1 md:row-end-3 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
               <div className="relative w-72">
                 <svg
                   width="96"
@@ -168,7 +168,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <p className="z-50 col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
+            <p className="z-50 col-start-1 col-end-3 row-start-4 row-end-6 md:row-start-3 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
               Born in Kebumen - Central Java, February 16th, 1998. <br />
               A passionate and fast learner person to learn new things. I am Software
               Developer with rich experience in website building and

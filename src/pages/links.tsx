@@ -52,7 +52,7 @@ export default function Links() {
   return (
     <>
       <AppHead
-        title="INUPURNOMO - ShortLink"
+        title="ShortLink | INUPURNOMO"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />

@@ -8,7 +8,7 @@ import {useSection} from "@/context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
 
-export default function WorkSection() {
+export default function ArchiveSection() {
   const {theme} = useTheme();
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,6 +26,19 @@ export default function WorkSection() {
   return (
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
       <section ref={sectionRef} id="blog" className="section md:px-10">
+        <div className="text-center">
+          <RoughNotation
+            type="underline"
+            color={`${
+              theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"
+            }`}
+            strokeWidth={2}
+            order={1}
+            show={isOnScreen}
+          >
+            <h2 className="section-heading">Work Experience</h2>
+          </RoughNotation>
+        </div>
         <div className="text-center mb-8" ref={elementRef}>
           My work experience!
         </div>
