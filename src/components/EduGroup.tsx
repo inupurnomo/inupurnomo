@@ -68,7 +68,7 @@ export default function EduGroup({edu}: Props) {
       </div>
       <ul
         role="list"
-        className=" marker:text-marrsgreen dark:marker:text-carrigreen list-disc pl-6 space-y-1 mt-1"
+        className="edu-list marker:text-marrsgreen dark:marker:text-carrigreen list-disc pl-6 space-y-1 mt-1"
       >
         {edu.list.map((li) => (
           <li key={li} className={`edu-list`}>

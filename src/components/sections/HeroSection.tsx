@@ -56,30 +56,30 @@ export default function HeroSection() {
       });
 
     // laptop floating effect
-    let laptopTl = gsap.timeline({repeat: -1});
-    laptopTl
-      .to(q(".laptop"), 3, {
-        y: "-=10",
-        x: "+=10",
-        rotation: "-=1",
-        ease: "Power1.easeInOut",
-      })
-      .to(q(".laptop"), 2, {
-        y: "+=10",
-        x: "-=10",
-        rotation: "-=1",
-        ease: "power1.easeInOut",
-      })
-      .to(q(".laptop"), 3, {
-        y: "-=10",
-        rotation: "+=1",
-        ease: "power1.easeInOut",
-      })
-      .to(q(".laptop"), 3, {
-        y: "+=10",
-        rotation: "+=1",
-        ease: "power1.easeInOut",
-      });
+    // let laptopTl = gsap.timeline({repeat: -1});
+    // laptopTl
+    //   .to(q(".laptop"), 3, {
+    //     y: "-=10",
+    //     x: "+=10",
+    //     rotation: "-=1",
+    //     ease: "Power1.easeInOut",
+    //   })
+    //   .to(q(".laptop"), 2, {
+    //     y: "+=10",
+    //     x: "-=10",
+    //     rotation: "-=1",
+    //     ease: "power1.easeInOut",
+    //   })
+    //   .to(q(".laptop"), 3, {
+    //     y: "-=10",
+    //     rotation: "+=1",
+    //     ease: "power1.easeInOut",
+    //   })
+    //   .to(q(".laptop"), 3, {
+    //     y: "+=10",
+    //     rotation: "+=1",
+    //     ease: "power1.easeInOut",
+    //   });
   }, [q]);
 
   return (
@@ -94,7 +94,7 @@ export default function HeroSection() {
         UI/UX DESIGNER WEB DEVELOPER SOFTWARE ENGINER FULL-STACK DEVELOPER
       </span>
 
-      <div className="z-10 mx-auto mt-0 select-none px-0 xs:mt-6 sm:mt-14 lg:-mt-20 lg:basis-1/3 lg:p-0">
+      <div className="image-animation z-10 mx-auto mt-0 select-none px-0 xs:mt-6 sm:mt-14 lg:-mt-20 lg:basis-1/3 lg:p-0">
         <div className="relative flex h-[440px] items-center justify-center pb-[70%] md:w-1/2">
           <div className="absolute-x-center absolute bottom-5 w-32">
             <video
