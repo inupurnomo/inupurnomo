@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+      <url>
+        <loc>https://inupurnomo.my.id</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.00</priority>
+      </url>
+      <url>
+        <loc>https://inupurnomo.my.id/open-source</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://inupurnomo.my.id/archive</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://inupurnomo.my.id/blog</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+      </url>
+      <url>
+        <loc>https://inupurnomo.my.id/blog/categories</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.61</priority>
+      </url>
+      <url>
+        <loc>https://inupurnomo.my.id/blog/tags</loc>
+        <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.61</priority>
+      </url>
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/categories/random</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/tags/hi</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/tags/astro</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/tags/web-development</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/tags/tiktok</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+      
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/posts/hola</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+        <url>
+          <loc>https://inupurnomo.my.id/blog/posts/hello-world</loc>
+          <lastmod>2023-09-01T06:33:34.849Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
+        </url>
+      
+   </urlset>
+ 

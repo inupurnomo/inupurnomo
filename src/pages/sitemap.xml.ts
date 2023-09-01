@@ -9,31 +9,53 @@ type Data = {
 };
 
 const generateSiteMap = ({slugs, categories, tags}: Data) => {
+  const date = new Date().toISOString();
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
       <url>
         <loc>${process.env.NEXT_PUBLIC_URL}</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.00</priority>
       </url>
       <url>
-      <loc>${process.env.NEXT_PUBLIC_URL}/open-source</loc>
+        <loc>${process.env.NEXT_PUBLIC_URL}/open-source</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
       </url>
       <url>
-      <loc>${process.env.NEXT_PUBLIC_URL}/archive</loc>
+        <loc>${process.env.NEXT_PUBLIC_URL}/archive</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
       </url>
       <url>
         <loc>${process.env.NEXT_PUBLIC_URL}/blog</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
       </url>
       <url>
         <loc>${process.env.NEXT_PUBLIC_URL}/blog/categories</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.61</priority>
       </url>
       <url>
         <loc>${process.env.NEXT_PUBLIC_URL}/blog/tags</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.61</priority>
       </url>
       ${categories
         .map((category) => {
           return `
         <url>
-        <loc>${process.env.NEXT_PUBLIC_URL}/blog/categories/${category}</loc>
+          <loc>${process.env.NEXT_PUBLIC_URL}/blog/categories/${category}</loc>
+          <lastmod>${date}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
         </url>
       `;
         })
@@ -42,7 +64,10 @@ const generateSiteMap = ({slugs, categories, tags}: Data) => {
         .map((tag) => {
           return `
         <url>
-        <loc>${process.env.NEXT_PUBLIC_URL}/blog/tags/${tag}</loc>
+          <loc>${process.env.NEXT_PUBLIC_URL}/blog/tags/${tag}</loc>
+          <lastmod>${date}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
         </url>
       `;
         })
@@ -52,7 +77,10 @@ const generateSiteMap = ({slugs, categories, tags}: Data) => {
         .map((slug) => {
           return `
         <url>
-        <loc>${process.env.NEXT_PUBLIC_URL}/blog/posts/${slug}</loc>
+          <loc>${process.env.NEXT_PUBLIC_URL}/blog/posts/${slug}</loc>
+          <lastmod>${date}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.51</priority>
         </url>
       `;
         })

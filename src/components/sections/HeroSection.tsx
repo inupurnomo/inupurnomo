@@ -85,18 +85,18 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-8 lg:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-[769px] mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse h-screen"
+      className="relative mx-auto h-screen min-h-[769px] max-w-5xl px-4 pt-8 sm:flex sm:flex-col sm:items-center sm:justify-center sm:px-8 sm:pb-24 md:px-20 lg:flex-row-reverse lg:pt-0"
     >
       <span
         aria-hidden="true"
-        className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0"
+        className="bg-text pointer-events-none absolute -top-36 z-0 rotate-12 scale-150 select-none text-center text-9xl font-bold tracking-wide text-gray-100 dark:text-[#1f2e3a]"
       >
         UI/UX DESIGNER WEB DEVELOPER SOFTWARE ENGINER FULL-STACK DEVELOPER
       </span>
 
-      <div className="z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:-mt-20 px-0 mx-auto lg:p-0 lg:basis-1/3">
-        <div className="h-[440px] md:w-1/2 pb-[70%] relative flex justify-center items-center">
-          <div className="w-32 absolute absolute-x-center bottom-5">
+      <div className="z-10 mx-auto mt-0 select-none px-0 xs:mt-6 sm:mt-14 lg:-mt-20 lg:basis-1/3 lg:p-0">
+        <div className="relative flex h-[440px] items-center justify-center pb-[70%] md:w-1/2">
+          <div className="absolute-x-center absolute bottom-5 w-32">
             <video
               className="w-32 rounded-full"
               playsInline={true}
@@ -107,33 +107,33 @@ export default function HeroSection() {
               <source src="/images/ava.mp4" />
             </video>
           </div>
-          <div className="absolute w-96 pb-96 bottom-[-300px] absolute-x-center flex justify-center items-center">
-            <div className="absolute absolute-y-center absolute-x-center">
-              <div className="circle-dashed w-[501px] pb-[501px] animate-spin-slow"></div>
+          <div className="absolute-x-center absolute bottom-[-300px] flex w-96 items-center justify-center pb-96">
+            <div className="absolute-y-center absolute-x-center absolute">
+              <div className="circle-dashed w-[501px] animate-spin-slow pb-[501px]"></div>
             </div>
-            <div className="absolute absolute-y-center absolute-x-center">
-              <div className="circle-dashed w-96 pb-96 animate-spin-slow ease-in"></div>
+            <div className="absolute-y-center absolute-x-center absolute">
+              <div className="circle-dashed w-96 animate-spin-slow pb-96 ease-in"></div>
             </div>
-            <div className="absolute absolute-y-center absolute-x-center">
-              <div className="circle-dashed w-64 pb-64 animate-spin-slow ease-in"></div>
+            <div className="absolute-y-center absolute-x-center absolute">
+              <div className="circle-dashed w-64 animate-spin-slow pb-64 ease-in"></div>
             </div>
           </div>
-          <div className="bg-[#0EA5E9] text-sm font-medium absolute bottom-72 left-24 sm:-left-20 md:-left-20 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute bottom-72 left-24 rounded-full bg-[#0EA5E9] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-20 md:-left-20">
             React.js
           </div>
-          <div className="bg-[#161616] text-sm font-medium absolute bottom-60 right-4 sm:-right-44 md:-right-44 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute bottom-60 right-4 rounded-full bg-[#161616] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-44 md:-right-44">
             Next.js
           </div>
-          <div className="bg-[#F05340] text-sm font-medium absolute bottom-56 left-4 sm:-left-44 md:-left-44 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute bottom-56 left-4 rounded-full bg-[#F05340] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-44 md:-left-44">
             Laravel
           </div>
-          <div className="bg-[#0468D7] text-sm font-medium absolute bottom-48 right-16 sm:-right-32 md:-right-32 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute bottom-48 right-16 rounded-full bg-[#0468D7] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-32 md:-right-32">
             Flutter
           </div>
-          <div className="bg-indigo-700 text-sm font-medium absolute bottom-32 -left-6 sm:-left-52 md:-left-56 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute -left-6 bottom-32 rounded-full bg-indigo-700 px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-52 md:-left-56">
             Rest API
           </div>
-          <div className="bg-[#4ba13e] text-sm font-medium absolute bottom-36 -right-6 sm:-right-56 md:-right-56 px-4 py-1 rounded-full text-white shadow-lg">
+          <div className="absolute -right-6 bottom-36 rounded-full bg-[#4ba13e] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-56 md:-right-56">
             MongoDB
           </div>
         </div>
@@ -164,17 +164,17 @@ export default function HeroSection() {
         </div>
       </div> */}
 
-      <div className="lg:basis-2/3 z-10 relative">
-        <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
+      <div className="relative z-10 lg:basis-2/3">
+        <span className="font-medium text-marrsgreen dark:text-carrigreen lg:text-lg">
           Hi 👋🏾! my name is
         </span>
         <div className="overflow-hidden">
-          <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
+          <h1 className="text-animation my-1 text-4xl font-semibold md:my-2 md:text-5xl lg:text-7xl">
             Ilham Ibnu Purnomo
           </h1>
         </div>
         <div className="overflow-hidden">
-          <span className="text-animation text-2xl md:text-3xl lg:text-5xl block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
+          <span className="text-animation block text-2xl font-medium text-marrsgreen dark:text-carrigreen md:my-3 md:text-3xl lg:text-5xl">
             A{" "}
             <Typewriter
               words={[
@@ -189,7 +189,10 @@ export default function HeroSection() {
             />
           </span>
         </div>
-        <div className="mt-2 my-4 md:mb-4">
+        <span className="text-xl">
+          Based in Bandung<span className="ml-1">🇮🇩</span>
+        </span>
+        <div className="my-4 mt-2 md:mb-4">
           <p className="mb-1">
             I am a Full-Stack Developer with a passion for delivering
             exceptional results.
@@ -219,7 +222,7 @@ export default function HeroSection() {
       </div>
       <a
         href="#whoami"
-        className="group absolute link-outline animate-bounce hidden md:bottom-0 lg:bottom-0 left-1/2 transform -translate-x-1/2 md:flex items-center flex-col"
+        className="link-outline group absolute left-1/2 hidden -translate-x-1/2 transform animate-bounce flex-col items-center md:bottom-0 md:flex lg:bottom-0"
       >
         <span className="group-hover:text-marrsgreen dark:group-hover:text-carrigreen">
           Scroll
@@ -228,7 +231,7 @@ export default function HeroSection() {
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          className="dark:fill-bglight group-hover:fill-marrsgreen dark:group-hover:fill-carrigreen"
+          className="group-hover:fill-marrsgreen dark:fill-bglight dark:group-hover:fill-carrigreen"
         >
           <path d="M11.975 22H12c3.859 0 7-3.14 7-7V9c0-3.841-3.127-6.974-6.981-7h-.06C8.119 2.022 5 5.157 5 9v6c0 3.86 3.129 7 6.975 7zM7 9a5.007 5.007 0 0 1 4.985-5C14.75 4.006 17 6.249 17 9v6c0 2.757-2.243 5-5 5h-.025C9.186 20 7 17.804 7 15V9z"></path>
           <path d="M11 6h2v6h-2z"></path>
@@ -237,7 +240,7 @@ export default function HeroSection() {
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          className="dark:fill-bglight group-hover:fill-marrsgreen dark:group-hover:fill-carrigreen"
+          className="group-hover:fill-marrsgreen dark:fill-bglight dark:group-hover:fill-carrigreen"
         >
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
         </svg>
