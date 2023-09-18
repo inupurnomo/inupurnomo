@@ -25,7 +25,7 @@ export default function WorkSection() {
 
   return (
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
-      <section ref={sectionRef} id="blog" className="section md:px-10">
+      <section ref={sectionRef} id="work" className="section md:px-10">
         <div className="text-center mb-8" ref={elementRef}>
           My work experience!
         </div>

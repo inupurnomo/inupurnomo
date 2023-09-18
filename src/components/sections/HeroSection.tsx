@@ -5,6 +5,7 @@ import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "@/components/LinkButton";
 
+import vector from "public/images/vector.svg";
 import inupurnomo from "public/inupurnomo-illustration.webp";
 import laptop from "public/laptop-illustration.webp";
 import {Typewriter} from "react-simple-typewriter";
@@ -97,7 +98,7 @@ export default function HeroSection() {
       <div className="image-animation z-10 mx-auto mt-0 select-none px-0 xs:mt-6 sm:mt-14 lg:-mt-20 lg:basis-1/3 lg:p-0">
         <div className="relative flex h-[440px] items-center justify-center pb-[70%] md:w-1/2">
           <div className="absolute-x-center absolute bottom-5 w-32">
-            <video
+            {/* <video
               className="w-32 rounded-full"
               playsInline={true}
               autoPlay={true}
@@ -105,7 +106,8 @@ export default function HeroSection() {
               src="/images/ava.mp4"
             >
               <source src="/images/ava.mp4" />
-            </video>
+            </video> */}
+            <Image src={vector} alt="vector" className="rounded-full"/>
           </div>
           <div className="absolute-x-center absolute bottom-[-300px] flex w-96 items-center justify-center pb-96">
             <div className="absolute-y-center absolute-x-center absolute">
@@ -118,22 +120,22 @@ export default function HeroSection() {
               <div className="circle-dashed w-64 animate-spin-slow pb-64 ease-in"></div>
             </div>
           </div>
-          <div className="absolute bottom-72 left-24 rounded-full bg-[#0EA5E9] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-20 md:-left-20">
+          <div className="absolute bottom-72 left-36 rounded-full bg-[#0EA5E9] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-20 md:-left-20 lg:left-4">
             React.js
           </div>
-          <div className="absolute bottom-60 right-4 rounded-full bg-[#161616] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-44 md:-right-44">
+          <div className="absolute bottom-60 right-8 rounded-full bg-[#161616] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-44 md:-right-44 lg:-right-24">
             Next.js
           </div>
-          <div className="absolute bottom-56 left-4 rounded-full bg-[#F05340] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-44 md:-left-44">
+          <div className="absolute bottom-56 left-14 rounded-full bg-[#F05340] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-44 md:-left-44 lg:-left-24">
             Laravel
           </div>
-          <div className="absolute bottom-48 right-16 rounded-full bg-[#0468D7] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-32 md:-right-32">
+          <div className="absolute bottom-48 right-24 rounded-full bg-[#0468D7] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-32 md:-right-32 lg:-right-12">
             Flutter
           </div>
-          <div className="absolute -left-6 bottom-32 rounded-full bg-indigo-700 px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-52 md:-left-56">
+          <div className="absolute left-0 bottom-32 rounded-full bg-indigo-700 px-4 py-1 text-sm font-medium text-white shadow-lg sm:-left-52 md:-left-56 lg:-left-36">
             Rest API
           </div>
-          <div className="absolute -right-6 bottom-36 rounded-full bg-[#4ba13e] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-56 md:-right-56">
+          <div className="absolute right-6 bottom-36 rounded-full bg-[#4ba13e] px-4 py-1 text-sm font-medium text-white shadow-lg sm:-right-56 md:-right-56 lg:-right-40">
             MongoDB
           </div>
         </div>

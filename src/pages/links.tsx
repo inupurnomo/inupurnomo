@@ -1,9 +1,9 @@
 import Image from "next/image";
-import ProfileImg from "public/images/me.jpg";
-import fill from "public/images/fill.png";
+import ProfileImg from "public/images/me.webp";
+import fill from "public/images/fill.webp";
 import Link from "next/link";
 import AppHead from "@/components/AppHead";
-import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
+import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineTwitter, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
@@ -26,6 +26,18 @@ const links = [
     label: "Twitter",
     icon: <AiOutlineTwitter />,
     color: "text-[#1c93e4]",
+  },
+  {
+    href: "https://github.com/inupurnomo",
+    label: "Github",
+    icon: <AiOutlineGithub />,
+    color: "text-[#010409]",
+  },
+  {
+    href: "https://linkedin.com/in/inupurnomo",
+    label: "LinkedIn",
+    icon: <AiOutlineLinkedin />,
+    color: "text-[#0073b2]",
   },
 ];
 
@@ -74,7 +86,7 @@ export default function Links() {
               ref={themeBtnRef}
               // aria-label={theme === "dark" ? "dark" : "light"}
               aria-live="polite"
-              className="w-12 h-12 ml-1 rounded-lg flex justify-center items-center link-outline absolute right-2 top-2 bg-slate-400/80 dark:bg-marrsdark/80 transition-all duration-300"
+              className="w-12 h-12 ml-1 rounded-full flex justify-center items-center link-outline absolute right-2 top-2 bg-slate-400/80 dark:bg-marrsdark/80 transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +107,8 @@ export default function Links() {
               </svg>
             </button>
           </header>
-          <div className="head px-2 flex relative">
-            <div className="min-h-28 min-w-28 h-28 w-28 rounded-full md:shadow-2xl -mt-16 ">
+          <div className="head px-4 flex relative">
+            <div className="min-h-28 min-w-28 h-28 w-28 rounded-full md:shadow-2xl -mt-16">
               <Image
                 src={ProfileImg}
                 width={1700}
@@ -117,14 +129,16 @@ export default function Links() {
                 <Link
                   key={i}
                   href={link.href}
+                  target="_blank"
                   className="border-2 border-black dark:border-white rounded-lg flex items-center font-bold h-14 w-full mb-2 shadow-md"
+                  title={link.label}
                 >
                   <span
                     className={`ml-2 text-4xl w-12 flex items-center justify-center ${link.color}`}
                   >
                     {link.icon}
                   </span>
-                  <span className="w-full flex justify-center hover:text-marrslight duration-300">
+                  <span className="w-full flex justify-center hover:text-marrslight duration-300 border-l border-l-bgdark dark:border-l-bglight">
                     {link.label}
                   </span>
                 </Link>

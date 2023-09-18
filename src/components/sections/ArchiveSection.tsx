@@ -15,7 +15,7 @@ export default function ArchiveSection() {
       }
     }, [theme]);
   return (
-    <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
+    <div className="bg-bglight dark:bg-bgdark">
       <section className="section md:px-10">
         <div className="min-h-screen">
           <Link
@@ -47,7 +47,7 @@ export default function ArchiveSection() {
             ref={themeBtnRef}
             // aria-label={theme === "dark" ? "dark" : "light"}
             aria-live="polite"
-            className="link-outline absolute right-2 top-2 ml-1 flex h-12 w-12 items-center justify-center rounded-lg bg-slate-400/80 transition-all duration-300 dark:bg-marrsdark/80"
+            className="link-outline absolute right-2 top-2 ml-1 flex h-12 w-12 items-center justify-center rounded-full bg-slate-400/80 transition-all duration-300 dark:bg-marrsdark/80"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,13 +94,15 @@ export default function ArchiveSection() {
                   className="border-b border-slate-300/10 last:border-none"
                 >
                   <td className="py-4 pr-4 align-top text-sm">
-                    <div className="translate-y-px">{proj.year}</div>
+                    <div className="translate-y-px text-carddark dark:text-textlight">
+                      {proj.year}
+                    </div>
                   </td>
                   <td className="py-4 pr-4 align-top font-semibold leading-snug dark:text-slate-200">
                     <div>
                       <div className="block sm:hidden">
                         <a
-                          className="group/link inline-flex items-baseline text-base font-medium leading-tight text-slate-200 hover:text-marrsgreen focus-visible:text-marrsgreen sm:hidden"
+                          className="group/link inline-flex items-baseline text-base font-medium leading-tight text-carddark hover:text-marrsgreen focus-visible:text-marrsgreen dark:text-textlight sm:hidden"
                           href={proj.link}
                           target="_blank"
                           rel="noreferrer"
@@ -108,7 +110,7 @@ export default function ArchiveSection() {
                         >
                           <span>
                             {" "}
-                            <span className="inline-block">
+                            <span className="inline-block text-carddark dark:text-textlight">
                               {proj.title}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -118,16 +120,18 @@ export default function ArchiveSection() {
                                 aria-hidden="true"
                               >
                                 <path
-                                  fill-rule="evenodd"
+                                  fillRule="evenodd"
                                   d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                  clip-rule="evenodd"
+                                  clipRule="evenodd"
                                 ></path>
                               </svg>
                             </span>
                           </span>
                         </a>
                       </div>
-                      <div className="hidden sm:block">{proj.title}</div>
+                      <div className="hidden text-carddark dark:text-textlight sm:block">
+                        {proj.title}
+                      </div>
                     </div>
                   </td>
                   <td className="hidden py-4 pr-4 align-top text-sm lg:table-cell">
@@ -168,9 +172,9 @@ export default function ArchiveSection() {
                                 aria-hidden="true"
                               >
                                 <path
-                                  fill-rule="evenodd"
+                                  fillRule="evenodd"
                                   d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                  clip-rule="evenodd"
+                                  clipRule="evenodd"
                                 ></path>
                               </svg>
                             </span>

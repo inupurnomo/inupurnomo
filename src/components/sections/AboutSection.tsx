@@ -9,7 +9,7 @@ import {useSection} from "@/context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
 
-import ProfileImg from "public/images/me.jpg";
+import ProfileImg from "public/images/me.webp";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -94,7 +94,7 @@ export default function AboutSection() {
 
   // Set active link for about section
   const aboutSection = useScrollActive(sectionRef);
-  const { onSectionChange } = useSection();
+  const {onSectionChange} = useSection();
   useEffect(() => {
     aboutSection ? onSectionChange!("who am i?") : onSectionChange!("");
   }, [aboutSection, onSectionChange]);
@@ -102,7 +102,7 @@ export default function AboutSection() {
   return (
     <div
       ref={sectionRef}
-      className="about-panel bg-white dark:bg-[#1B2731] relative"
+      className="about-panel relative bg-white dark:bg-[#1B2731]"
     >
       <section id="whoami" className="section">
         <RoughNotationGroup>
@@ -119,21 +119,21 @@ export default function AboutSection() {
               <h2 className="section-heading">Who am I?</h2>
             </RoughNotation>
           </div>
-          <div className="md:grid grid-rows-5 lg:grid-rows-6 grid-cols-5">
-            <div className="col-start-1 col-end-3 row-start-2 row-end-4 md:row-start-1 md:row-end-3 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
+          <div className="grid-cols-5 grid-rows-5 md:grid lg:grid-rows-6">
+            <div className="col-start-1 col-end-3 row-start-2 row-end-4 flex items-center justify-center py-4 md:row-start-1 md:row-end-3 lg:col-start-1 lg:col-end-3 lg:row-end-7 lg:mb-[20%]">
               <div className="relative w-72">
                 <svg
                   width="96"
                   height="21"
                   viewBox="0 0 96 21"
                   aria-hidden="true"
-                  className="img-svg hidden lg:block fill-marrsgreen dark:fill-carrigreen absolute -top-14 -left-14"
+                  className="img-svg absolute -left-14 -top-14 hidden fill-marrsgreen dark:fill-carrigreen lg:block"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M79.2202 0.959991L62.7802 17.32L46.3301 0.959991L29.8902 17.32L13.4501 0.959991L0.410156 13.94L0.400146 17.58L13.4501 4.58999L29.8902 20.95L46.3301 4.58999L62.7802 20.95L79.2202 4.58999L93.7302 19.02L95.5402 17.19L79.2202 0.959991Z" />
                 </svg>
 
-                <div className="profile-picture overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
+                <div className="profile-picture overflow-hidden rounded-md md:overflow-visible md:shadow-2xl">
                   <Image
                     src={ProfileImg}
                     width={1700}
@@ -149,7 +149,7 @@ export default function AboutSection() {
                   height="14"
                   viewBox="0 0 15 14"
                   aria-hidden="true"
-                  className="img-svg hidden lg:block fill-marrsgreen dark:fill-carrigreen absolute bottom-8 -right-12"
+                  className="img-svg absolute -right-12 bottom-8 hidden fill-marrsgreen dark:fill-carrigreen lg:block"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M13.68 11.51L9.23 7.05998L13.68 2.61C14.24 2.05 14.24 1.12999 13.68 0.569994C13.12 0.00999391 12.2 0.00999391 11.64 0.569994L7.19002 5.02001L2.74001 0.569994C2.18001 0.00999391 1.26003 0.00999391 0.700029 0.569994C0.140029 1.12999 0.140029 2.05 0.700029 2.61L5.15004 7.05998L0.700029 11.51C0.140029 12.07 0.140029 12.99 0.700029 13.55C1.26003 14.11 2.18001 14.11 2.74001 13.55L7.19002 9.09999L11.64 13.55C12.2 14.11 13.12 14.11 13.68 13.55C14.24 12.99 14.24 12.08 13.68 11.51Z" />
@@ -160,7 +160,7 @@ export default function AboutSection() {
                   height="24"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  className="img-svg hidden lg:block fill-[#FF9D00] absolute -bottom-10 right-6 scale-150"
+                  className="img-svg absolute -bottom-10 right-6 hidden scale-150 fill-[#FF9D00] lg:block"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M11.6799 5.68002C11.6799 8.65002 9.27994 11.05 6.30994 11.05C3.33994 11.05 0.939941 8.65002 0.939941 5.68002C0.939941 2.71002 3.33994 0.309998 6.30994 0.309998C9.27994 0.309998 11.6799 2.71002 11.6799 5.68002Z" />
@@ -168,12 +168,11 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <p className="z-50 col-start-1 col-end-3 row-start-4 row-end-6 md:row-start-3 lg:row-start-1 lg:row-end-2 lg:col-start-1 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              Born in Kebumen - Central Java, February 16th, 1998. <br />
-              A passionate and fast learner person to learn new things. I am Software
-              Developer with rich experience in website building and
-              customization, also great communication skills.
-              I have honed my
+            <p className="about-intro z-50 col-start-1 col-end-3 row-start-4 row-end-6 md:row-start-3 lg:col-start-1 lg:col-end-6 lg:row-start-1 lg:row-end-2 lg:ml-8 lg:mt-auto">
+              Born in Kebumen - Central Java, February 16th, 1998. <br />A
+              passionate and fast learner person to learn new things. I am
+              Software Developer with rich experience in website building and
+              customization, also great communication skills. I have honed my
               skills in both frontend and backend development. In addition to my
               hands-on experience in web development, my education has also
               played a critical role in providing a strong foundation for my
@@ -181,10 +180,12 @@ export default function AboutSection() {
             </p>
 
             <div
-              className="col-start-3 col-end-6 row-start-1 row-end-6 lg:row-start-2 lg:row-end-7 md:ml-8 place-content-end"
+              className="col-start-3 col-end-6 row-start-1 row-end-6 place-content-end md:ml-8 lg:row-start-2 lg:row-end-7"
               ref={eduRef}
             >
-              <p className="edu-bg my-4 font-semibold">Here is my educational background.</p>
+              <p className="edu-bg my-4 font-semibold">
+                Here is my educational background.
+              </p>
               {educationInfo.map((edu) => (
                 <EduGroup edu={edu} key={edu.id} />
               ))}
@@ -196,7 +197,7 @@ export default function AboutSection() {
       <AboutBgSvg />
     </div>
   );
-};
+}
 
 const educationInfo = [
   {
