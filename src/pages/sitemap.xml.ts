@@ -25,6 +25,12 @@ const generateSiteMap = ({slugs, categories, tags}: Data) => {
         <priority>0.80</priority>
       </url>
       <url>
+        <loc>${process.env.NEXT_PUBLIC_URL}/links</loc>
+        <lastmod>${date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+      </url>
+      <url>
         <loc>${process.env.NEXT_PUBLIC_URL}/archive</loc>
         <lastmod>${date}</lastmod>
         <changefreq>monthly</changefreq>
