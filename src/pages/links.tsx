@@ -4,6 +4,7 @@ import fill from "public/images/fill.webp";
 import Link from "next/link";
 import AppHead from "@/components/AppHead";
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineTwitter, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
@@ -22,10 +23,10 @@ const links = [
     color: "text-[#ef057c]",
   },
   {
-    href: "https://twitter.com/inupurnomo",
-    label: "Twitter",
-    icon: <AiOutlineTwitter />,
-    color: "text-[#1c93e4]",
+    href: "https://x.com/inupurnomo",
+    label: "X",
+    icon: <FaSquareXTwitter />,
+    color: "text-[#000000]",
   },
   {
     href: "https://github.com/inupurnomo",

@@ -2,7 +2,6 @@
 import {useEffect, useRef} from "react";
 import Link from "next/link";
 import {useTheme} from "next-themes";
-import { BiLogoWordpress } from "react-icons/bi";
 
 export default function ArchiveSection() {
   const {theme, setTheme} = useTheme();
@@ -88,7 +87,7 @@ export default function ArchiveSection() {
               </tr>
             </thead>
             <tbody>
-              {projectsArchive.map((proj) => (
+              {projectsArchive.toReversed().map((proj) => (
                 <tr
                   key={proj.id}
                   className="border-b border-slate-300/10 last:border-none"
@@ -196,7 +195,7 @@ export default function ArchiveSection() {
 const projectsArchive = [
   {
     id: 1,
-    year: "2022",
+    year: "2019",
     title: "Harvard Business School Design System",
     linkName: "",
     link: "#",
@@ -205,7 +204,7 @@ const projectsArchive = [
   },
   {
     id: 2,
-    year: "2022",
+    year: "2019",
     title: "Threadable",
     linkName: "apps.apple.com",
     link: "https://apps.apple.com/app/apple-store/id1550995547?pt=122219983&ct=threadablebooks.com%20header&mt=8",
@@ -214,16 +213,15 @@ const projectsArchive = [
   },
   {
     id: 3,
-    year: "2022",
-    title: "Pratt",
-    linkName: "pratt.edu",
-    link: "https://www.pratt.edu/",
-    madeAt: "Upstatement",
+    year: "2023",
+    title: "Diggyvec",
+    linkName: "diggyvec.vercel.app",
+    link: "https://diggyvec.vercel.app/",
+    madeAt: "Telkom University",
     techlist: [
-      "WordPress",
-      "Timber",
-      "Wordpress Multisite",
-      "Guttenberg",
+      "NodeJs",
+      "Bootstrap",
+      "Vercel",
       "JavaScript",
     ],
   },
