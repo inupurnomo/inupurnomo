@@ -5,14 +5,14 @@ import {useTheme} from "next-themes";
 
 export default function ArchiveSection() {
   const {theme, setTheme} = useTheme();
-    const themeBtnRef = useRef<HTMLButtonElement>(null);
-    // update theme button aria-label according to theme value
-    useEffect(() => {
-      const themeBtn = themeBtnRef.current;
-      if (themeBtn) {
-        themeBtn.ariaLabel = theme ?? "light";
-      }
-    }, [theme]);
+  const themeBtnRef = useRef<HTMLButtonElement>(null);
+  // update theme button aria-label according to theme value
+  useEffect(() => {
+    const themeBtn = themeBtnRef.current;
+    if (themeBtn) {
+      themeBtn.ariaLabel = theme ?? "light";
+    }
+  }, [theme]);
   return (
     <div className="bg-bglight dark:bg-bgdark">
       <section className="section md:px-10">
@@ -87,7 +87,7 @@ export default function ArchiveSection() {
               </tr>
             </thead>
             <tbody>
-              {projectsArchive.toReversed().map((proj) => (
+              {projectsArchive.map((proj) => (
                 <tr
                   key={proj.id}
                   className="border-b border-slate-300/10 last:border-none"
@@ -225,4 +225,4 @@ const projectsArchive = [
       "JavaScript",
     ],
   },
-];
+].reverse();
