@@ -2,9 +2,7 @@
 module.exports = {
   darkMode: "class",
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
@@ -22,11 +20,11 @@ module.exports = {
         "spin-slow": "spin 20s linear infinite",
       },
       colors: {
-        bglight: "#F9FAFB",
+        bglight: "#FAFAFA",
         marrslight: "#1C9A9A",
         marrsgreen: "#007A7A",
         marrsdark: "#004D4D",
-        cardlight: "#EFF3F3",
+        cardlight: "#F3F4F6",
 
         // bgdark: "#2D2D2D",
         bgdark: "#1D2A35",

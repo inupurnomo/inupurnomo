@@ -1,0 +1,32 @@
+import React, { useState, useEffect, RefObject } from "react";
+
+const useScrollActive = (ref: RefObject<HTMLElement>) => {
+  const [state, setState] = useState(false);
+
+  useEffect(() => {
+    const scrollActive = () => {
+      const scrollY = window.pageYOffset;
+
+      const sectionHeight = ref.current?.offsetHeight;
+      const sectionTop = ref.current?.offsetTop! - 80;
+      if (
+        scrollY > sectionTop &&
+        scrollY <= sectionTop + (sectionHeight as number)
+      ) {
+        setState(true);
+      } else {
+        setState(false);
+      }
+    };
+    scrollActive();
+    window.addEventListener("scroll", scrollActive);
+
+    return () => {
+      window.removeEventListener("scroll", scrollActive);
+    };
+  }, [ref]);
+
+  return state;
+};
+
+export default useScrollActive;

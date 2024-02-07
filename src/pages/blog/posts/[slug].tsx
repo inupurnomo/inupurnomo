@@ -1,21 +1,23 @@
-import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
-import {GetStaticPaths, GetStaticProps} from "next";
-import {useTheme} from "next-themes";
+import React from "react";
 
-import BlogHeader from "@/components/blog/BlogHeader";
-import SkipToMain from "@/components/SkipToMain";
-import SocialLinks from "@/components/SocialLinks";
-import AppHead, {Meta} from "@/components/AppHead";
-import Footer from "@/components/Footer";
-import markdownToHtml from "@/utils/markdownToHtml";
-import {getAllPosts, getPostBySlug} from "@/utils/api";
-import PostBody from "@/components/blog/PostBody";
-import Tag from "@/components/blog/Tag";
-import DateTime from "@/components/DateTime";
-import HeadCategory from "@/components/blog/HeadCategory";
-import {DiscussionEmbed, CommentCount} from "disqus-react";
+import Image from "@/common/components/elements/Image";
+import Link from "next/link";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { useTheme } from "next-themes";
+
+import BlogHeader from "@/common/components/blog/BlogHeader";
+import SkipToMain from "@/common/components/SkipToMain";
+import SocialLinks from "@/common/components/SocialLinks";
+import Footer from "@/common/components/layouts/Footer";
+import markdownToHtml from "@/common/utils/markdownToHtml";
+import { getAllPosts, getPostBySlug } from "@/common/utils/api";
+import PostBody from "@/common/components/blog/PostBody";
+import Tag from "@/common/components/blog/Tag";
+import DateTime from "@/common/components/DateTime";
+import HeadCategory from "@/common/components/blog/HeadCategory";
+import { DiscussionEmbed, CommentCount } from "disqus-react";
+import { NextSeo } from "next-seo";
+import { Meta } from "@/common/types/meta";
 
 export interface MdxMeta extends Meta {
   title: string;
@@ -36,15 +38,30 @@ type Props = {
   post: MdxMeta;
 };
 
-const BlogLayout: React.FC<Props> = ({post}) => {
-  const {theme} = useTheme();
-  const postUrl = `${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`;
+const BlogLayout: React.FC<Props> = ({ post }) => {
+  const { theme } = useTheme();
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`;
   return (
     <>
-      <AppHead
-        title={`${post.title} - Diggy`}
-        url={`${process.env.NEXT_PUBLIC_URL}/blog/posts/${post.slug}`}
-        meta={post}
+      <NextSeo
+        title={post.title}
+        description={post.excerpt}
+        canonical={canonicalUrl}
+        openGraph={{
+          type: "article",
+          article: {
+            publishedTime: post.datetime,
+            modifiedTime: post.datetime,
+            authors: ["Ilham Ibnu Purnomo", "inupurnomo"],
+          },
+          url: canonicalUrl,
+          images: [
+            {
+              url: post.coverImage as string,
+            },
+          ],
+          siteName: "Diggy Blog",
+        }}
       />
       <div className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
@@ -62,7 +79,7 @@ const BlogLayout: React.FC<Props> = ({post}) => {
                   <CommentCount
                     shortname="inupurnomo"
                     config={{
-                      url: postUrl,
+                      url: canonicalUrl,
                       identifier: post.slug,
                       title: post.title,
                     }}
@@ -88,7 +105,7 @@ const BlogLayout: React.FC<Props> = ({post}) => {
                     src={post.coverImage}
                     alt={post.coverImageAlt || "Picture"}
                     sizes="100vw"
-                    style={{width: "100%", height: "auto"}}
+                    style={{ width: "100%", height: "auto" }}
                     priority
                     width={Number(post.coverImageWidth) || 1200}
                     height={Number(post.coverImageHeight) || 700}
@@ -99,14 +116,14 @@ const BlogLayout: React.FC<Props> = ({post}) => {
               <hr />
               {/* Disqus Comment Plugin */}
               <div className="bg-slate-50 px-6 py-6">
-                <DiscussionEmbed
+                {/* <DiscussionEmbed
                   shortname="inupurnomo"
                   config={{
-                    url: postUrl,
+                    url: canonicalUrl,
                     identifier: post.slug,
                     title: post.title,
                   }}
-                />
+                /> */}
               </div>
             </article>
           </main>
@@ -117,7 +134,7 @@ const BlogLayout: React.FC<Props> = ({post}) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params!.slug as string, [
     "title",
     "datetime",

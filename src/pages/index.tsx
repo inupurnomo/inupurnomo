@@ -1,55 +1,41 @@
 /* eslint-disable react/no-unescaped-entities */
-import type {GetStaticProps, NextPage} from "next";
-import AppHead from "@/components/AppHead";
-import Loader from "@/components/Loader";
-import SkipToMain from "@/components/SkipToMain";
-import Header from "@/components/Header";
-import SocialLinks from "@/components/SocialLinks";
-import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import ProjectSection from "@/components/sections/ProjectSection";
-import BlogSection from "@/components/sections/BlogSection";
-import ContactSection from "@/components/sections/ContactSection";
-import Footer from "@/components/Footer";
+import React from "react";
 
-import {getAllPosts} from "@/utils/api";
-import {MdxMeta} from "@/pages/blog/posts/[slug]";
-import WorkSection from "@/components/sections/WorkSection";
+import type { GetStaticProps } from "next";
+import Loader from "@/common/components/Loader";
+import SkipToMain from "@/common/components/SkipToMain";
+import Header from "@/common/components/layouts/Header";
+import SocialLinks from "@/common/components/SocialLinks";
+import Hero from "@/modules/hero";
+import About from "@/modules/about";
+import Project from "@/modules/project";
+import Blog from "@/modules/blog";
+import Contact from "@/modules/contact";
+import Footer from "@/common/components/layouts/Footer";
+import Work from "@/modules/work";
+
+import { getAllPosts } from "@/common/utils/api";
+import { MdxMeta } from "@/pages/blog/posts/[slug]";
 
 type Props = {
   blogPosts: MdxMeta[];
 };
 
-export const meta = {
-  description:
-    "INUPURNOMO is a full-stack developer based in Bandung, Indonesia. He is passionate about writing codes and developing web applications to solve real-life challenges.",
-  author: "INUPURNOMO",
-  type: "website",
-  ogImage: `${process.env.NEXT_PUBLIC_URL}/inupurnomo-og.png`,
-  siteName: "INUPURNOMO",
-  imageAlt: "INUPURNOMO portfolio website",
-};
-
-export default function Home({blogPosts}: Props) {
+const Home = ({ blogPosts }: Props) => {
   return (
     <>
-      <AppHead
-        title="INUPURNOMO | A Full-stack Developer"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
-        meta={meta}
-      />
       {/* <Loader>INUPURNOMO</Loader> */}
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />
           <Header />
           <main id="main">
-            <HeroSection />
-            <AboutSection />
-            <ProjectSection />
-            {/* <WorkSection /> */}
-            <BlogSection posts={blogPosts} />
-            <ContactSection />
+            <Hero />
+            <About />
+            <Work />
+            <Project />
+            <Blog posts={blogPosts} />
+            <Contact />
           </main>
           <SocialLinks page="index" />
           <Footer />
@@ -57,7 +43,7 @@ export default function Home({blogPosts}: Props) {
       </div>
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = getAllPosts([
@@ -77,3 +63,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default Home;

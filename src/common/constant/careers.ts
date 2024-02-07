@@ -1,0 +1,40 @@
+import { CareerProps } from '../types/careers';
+
+export const CAREERS: CareerProps[] = [
+  {
+    position: 'Full-stack Developer',
+    company: 'Telemetri BWS Maluku',
+    logo: null,
+    location: 'Maluku, ID',
+    location_type: 'Remote',
+    type: 'Freelance',
+    start_date: '2019-09',
+    end_date: '2020-01',
+    industry: 'startup',
+    link: '#',
+  },
+  {
+    position: 'Full-stack Developer',
+    company: 'Localhosts Social Community',
+    logo: null,
+    location: 'Cianjur, ID',
+    location_type: 'Remote',
+    type: 'Freelance',
+    start_date: '2019-04',
+    end_date: '2019-08',
+    industry: 'startup',
+    link: '#',
+  },
+  {
+    position: 'Web Developer',
+    company: 'Baramij Integrasi Teknologi',
+    logo: null,
+    location: 'Bandung, ID',
+    location_type: 'Onsite',
+    type: 'Internship',
+    start_date: '2019-03',
+    end_date: '2019-08',
+    industry: 'startup',
+    link: 'https://www.baramijintegrasi.com',
+  },
+];
