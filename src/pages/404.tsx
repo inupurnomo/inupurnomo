@@ -1,20 +1,15 @@
-import type {NextPage} from "next";
+import React from "react";
 
-import AppHead from "@/components/AppHead";
-import Footer from "@/components/Footer";
-import LinkButton from "@/components/LinkButton";
+import Footer from "@/common/components/layouts/Footer";
+import LinkButton from "@/common/components/LinkButton";
 
-import {meta} from "@/pages";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
-export default function Custom404() {
+const Custom404 = () => {
   return (
     <>
-      <AppHead
-        title="404 - Diggy"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
-        meta={meta}
-      />
+      <NextSeo title="404" />
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
         <div className="h-screen flex flex-col justify-center selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <div className="flex justify-center items-center flex-col mt-auto">
@@ -46,3 +41,5 @@ export default function Custom404() {
     </>
   );
 };
+
+export default Custom404;

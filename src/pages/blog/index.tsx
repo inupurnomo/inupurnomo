@@ -1,27 +1,29 @@
 /* eslint-disable react/no-unescaped-entities */
-import type {GetStaticProps, NextPage} from "next";
-import {MdxMeta} from "./posts/[slug]";
+import React from "react";
 
-import AppHead from "@/components/AppHead";
-import BlogHeroSection from "@/components/sections/BlogHeroSection";
-import SkipToMain from "@/components/SkipToMain";
-import SocialLinks from "@/components/SocialLinks";
-import BlogHeader from "@/components/blog/BlogHeader";
-import BlogCard from "@/components/blog/BlogCard";
-import Footer from "@/components/Footer";
-import {getAllPosts} from "@/utils/api";
-import {useFilter} from "@/context/filter";
-import Loader from "@/components/Loader";
+import type { GetStaticProps, NextPage } from "next";
+import { MdxMeta } from "./posts/[slug]";
+
+import BlogHero from "@/modules/bloghero";
+import SkipToMain from "@/common/components/SkipToMain";
+import SocialLinks from "@/common/components/SocialLinks";
+import BlogHeader from "@/common/components/blog/BlogHeader";
+import BlogCard from "@/common/components/blog/BlogCard";
+import Footer from "@/common/components/layouts/Footer";
+import { getAllPosts } from "@/common/utils/api";
+import { useFilter } from "@/common/context/filter";
+import Loader from "@/common/components/Loader";
+import { NextSeo } from "next-seo";
 
 type Props = {
   posts: MdxMeta[];
 };
 
-const Blog: NextPage<Props> = ({posts}) => {
-  const {searchText, postLanguage} = useFilter();
+const Blog: NextPage<Props> = ({ posts }) => {
+  const { searchText, postLanguage } = useFilter();
   return (
     <>
-      <AppHead title="Blog - INUPURNOMO" />
+      <NextSeo title="Blog" />
       <Loader>Diggy's Blog</Loader>
       <div className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
@@ -29,7 +31,7 @@ const Blog: NextPage<Props> = ({posts}) => {
           <BlogHeader />
           <SocialLinks />
           <main id="main" className="mb-20">
-            <BlogHeroSection />
+            <BlogHero />
             {searchText === "" && postLanguage === "All" && (
               <>
                 <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
@@ -58,10 +60,10 @@ const Blog: NextPage<Props> = ({posts}) => {
               </h2>
               <ul>
                 {posts
-                  .filter(({title}) =>
+                  .filter(({ title }) =>
                     title.toLowerCase().includes(searchText.toLowerCase())
                   )
-                  .filter(({language}) => {
+                  .filter(({ language }) => {
                     if (postLanguage === "All") return true;
                     return language === postLanguage;
                   })

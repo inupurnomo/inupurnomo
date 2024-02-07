@@ -1,18 +1,18 @@
-import {useEffect, useRef} from "react";
-import type {GetStaticProps, NextPage} from "next";
+import React, { useEffect, useRef } from "react";
+
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import gsap from "gsap";
 
-import AppHead from "@/components/AppHead";
-import SkipToMain from "@/components/SkipToMain";
-import SocialLinks from "@/components/SocialLinks";
-import BlogHeader from "@/components/blog/BlogHeader";
-import BlogCardBox from "@/components/blog/BlogCardBox";
-import Footer from "@/components/Footer";
-import Loader from "@/components/Loader";
-import {getAllPosts} from "@/utils/api";
-import slugify from "@/utils/slugify";
-import {MdxMeta} from "../posts/[slug]";
+import SkipToMain from "@/common/components/SkipToMain";
+import SocialLinks from "@/common/components/SocialLinks";
+import BlogHeader from "@/common/components/blog/BlogHeader";
+import BlogCardBox from "@/common/components/blog/BlogCardBox";
+import Footer from "@/common/components/layouts/Footer";
+import Loader from "@/common/components/Loader";
+import { getAllPosts } from "@/common/utils/api";
+import slugify from "@/common/utils/slugify";
+import { NextSeo } from "next-seo";
 
 type CategorizedPosts = {
   [key: string]: {
@@ -26,7 +26,7 @@ type Props = {
   categorizedPosts: CategorizedPosts;
 };
 
-const Blog: NextPage<Props> = ({categories, categorizedPosts}) => {
+const Blog: NextPage<Props> = ({ categories, categorizedPosts }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
@@ -37,7 +37,7 @@ const Blog: NextPage<Props> = ({categories, categorizedPosts}) => {
       const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.2;
       gsap.fromTo(
         tag as any,
-        {x: -100, opacity: 0},
+        { x: -100, opacity: 0 },
         {
           x: 0,
           opacity: 1,
@@ -52,7 +52,7 @@ const Blog: NextPage<Props> = ({categories, categorizedPosts}) => {
       const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.1;
       gsap.fromTo(
         tag as any,
-        {opacity: 0},
+        { opacity: 0 },
         {
           opacity: 1,
           delay: delayTime,
@@ -63,7 +63,7 @@ const Blog: NextPage<Props> = ({categories, categorizedPosts}) => {
 
   return (
     <>
-      <AppHead title="Categories - Diggy" />
+      <NextSeo title="Categories" />
       <Loader>Categories</Loader>
       <div ref={sectionRef} className="bg-bglight dark:bg-bgdark">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">

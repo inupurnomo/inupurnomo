@@ -1,6 +1,6 @@
-import {GetServerSideProps} from "next";
-import {getAllPosts} from "@/utils/api";
-import slugify from "@/utils/slugify";
+import { GetServerSideProps } from "next";
+import { getAllPosts } from "@/common/utils/api";
+import slugify from "@/common/utils/slugify";
 
 type Data = {
   slugs: (string | string[])[];
@@ -8,7 +8,7 @@ type Data = {
   categories: (string | string[])[];
 };
 
-const generateSiteMap = ({slugs, categories, tags}: Data) => {
+const generateSiteMap = ({ slugs, categories, tags }: Data) => {
   const date = new Date().toISOString();
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -99,7 +99,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export const getServerSideProps: GetServerSideProps = async ({res}) => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   // Retrieve slugs tags and category from contents folder
   const posts = getAllPosts(["slug", "tags", "category"]);
 
@@ -120,7 +120,7 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {
     encodeURIComponent((post.slug as string).trim())
   );
 
-  const data = {slugs, tags, categories};
+  const data = { slugs, tags, categories };
 
   // Generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(data);

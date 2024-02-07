@@ -1,16 +1,21 @@
-import {useEffect, useRef} from "react";
-import Head from "next/head";
-import type {AppProps} from "next/app";
-import {ThemeProvider} from "next-themes";
-import {ProvideFilter} from "@/context/filter";
-import {ProvideSection} from "@/context/section";
+import React, { useEffect, useRef } from "react";
 
-import "@/styles/globals.css";
+import Head from "next/head";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
+import { ProvideFilter } from "@/common/context/filter";
+import { ProvideSection } from "@/common/context/section";
+
+import "@/common/styles/globals.css";
 
 import gsap from "gsap";
 import Script from "next/script";
+import NextTopLoader from "nextjs-toploader";
+import { DefaultSeo } from 'next-seo';
 
-function App({Component, pageProps}: AppProps) {
+import defaultSEOConfig from "../../next-seo.config";
+
+function App({ Component, pageProps }: AppProps) {
   const cursorRef = useRef(null);
 
   useEffect(() => {
@@ -26,11 +31,11 @@ function App({Component, pageProps}: AppProps) {
     });
 
     const hideCursor = () => {
-      gsap.to(cursorRef.current, {opacity: 0});
+      gsap.to(cursorRef.current, { opacity: 0 });
     };
 
     const showCursor = () => {
-      gsap.to(cursorRef.current, {opacity: 1});
+      gsap.to(cursorRef.current, { opacity: 1 });
     };
 
     document.addEventListener("mouseleave", hideCursor);
@@ -62,9 +67,11 @@ function App({Component, pageProps}: AppProps) {
         ref={cursorRef}
         className="hidden lg:block w-12 h-12 opacity-0 pointer-events-none rounded-full border-2 border-marrsgreen dark:border-carrigreen z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
       />
+      <DefaultSeo {...defaultSEOConfig} />
       <ThemeProvider attribute="class">
         <ProvideFilter>
           <ProvideSection>
+            <NextTopLoader showSpinner={false} shadow="0" />
             <Component {...pageProps} />
           </ProvideSection>
         </ProvideFilter>

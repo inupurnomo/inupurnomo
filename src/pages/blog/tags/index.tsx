@@ -1,23 +1,24 @@
-import type {GetStaticProps, NextPage} from "next";
-import {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
+
+import type { GetStaticProps, NextPage } from "next";
 import gsap from "gsap";
 
-import AppHead from "@/components/AppHead";
-import SkipToMain from "@/components/SkipToMain";
-import SocialLinks from "@/components/SocialLinks";
-import BlogHeader from "@/components/blog/BlogHeader";
-import Tag from "@/components/blog/Tag";
-import Footer from "@/components/Footer";
-import {getAllPosts} from "@/utils/api";
-import Loader from "@/components/Loader";
-import slugify from "@/utils/slugify";
+import SkipToMain from "@/common/components/SkipToMain";
+import SocialLinks from "@/common/components/SocialLinks";
+import BlogHeader from "@/common/components/blog/BlogHeader";
+import Tag from "@/common/components/blog/Tag";
+import Footer from "@/common/components/layouts/Footer";
+import { getAllPosts } from "@/common/utils/api";
+import Loader from "@/common/components/Loader";
+import slugify from "@/common/utils/slugify";
+import { NextSeo } from "next-seo";
 
 type Props = {
   tags: string[];
-  tagCounts: {[key: string]: number};
+  tagCounts: { [key: string]: number };
 };
 
-const Blog: NextPage<Props> = ({tags, tagCounts}) => {
+const Blog: NextPage<Props> = ({ tags, tagCounts }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
@@ -28,7 +29,7 @@ const Blog: NextPage<Props> = ({tags, tagCounts}) => {
       const delayTime = i == 0 ? initialDelay : initialDelay + i * 0.1;
       gsap.fromTo(
         tag as any,
-        {y: -40, opacity: 0},
+        { y: -40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -41,7 +42,7 @@ const Blog: NextPage<Props> = ({tags, tagCounts}) => {
 
   return (
     <>
-      <AppHead title="Blog - Diggy" />
+      <NextSeo title="Tags" />
       <Loader>Tags</Loader>
       <div ref={sectionRef} className="bg-bglight dark:bg-bgdark min-h-screen">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
@@ -76,7 +77,7 @@ export const getStaticProps: GetStaticProps = async () => {
     if (post.tags) tags.push(...(post.tags as string[]));
   }
 
-  const tagCounts: {[key: string]: number} = {};
+  const tagCounts: { [key: string]: number } = {};
 
   for (const tag of tags) {
     tagCounts[tag] = tagCounts[tag] ? tagCounts[tag] + 1 : 1;

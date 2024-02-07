@@ -23,6 +23,7 @@ module.exports = {
   trailingSlash: false,
   images: {
     domains: ["res.cloudinary.com", "inupurnomo.netlify.app"],
+    unoptimized: true,
   },
   compiler: {
     removeConsole: true,

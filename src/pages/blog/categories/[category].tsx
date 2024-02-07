@@ -1,24 +1,26 @@
-import {useEffect, useRef} from "react";
-import type {GetStaticPaths, GetStaticProps, NextPage} from "next";
+import React, { useEffect, useRef } from "react";
+
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import gsap from "gsap";
 
-import AppHead from "@/components/AppHead";
-import SkipToMain from "@/components/SkipToMain";
-import SocialLinks from "@/components/SocialLinks";
-import BlogHeader from "@/components/blog/BlogHeader";
-import BlogCard from "@/components/blog/BlogCard";
-import Footer from "@/components/Footer";
-import {getAllPosts} from "@/utils/api";
-import {MdxMeta} from "../posts/[slug]";
-import slugify, {unslugify} from "@/utils/slugify";
-import Loader from "@/components/Loader";
+import SkipToMain from "@/common/components/SkipToMain";
+import SocialLinks from "@/common/components/SocialLinks";
+import BlogHeader from "@/common/components/blog/BlogHeader";
+import BlogCard from "@/common/components/blog/BlogCard";
+import Footer from "@/common/components/layouts/Footer";
+import { getAllPosts } from "@/common/utils/api";
+import { MdxMeta } from "../posts/[slug]";
+import slugify, { unslugify } from "@/common/utils/slugify";
+import Loader from "@/common/components/Loader";
+import { NextSeo } from "next-seo";
+import { capitalizeFirstLetter } from "@/common/helpers";
 
 type Props = {
   posts: MdxMeta[];
   category: string;
 };
 
-const Blog: NextPage<Props> = ({posts, category}) => {
+const Blog: NextPage<Props> = ({ posts, category }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Animations
@@ -26,7 +28,7 @@ const Blog: NextPage<Props> = ({posts, category}) => {
     const q = gsap.utils.selector(sectionRef);
     gsap.fromTo(
       q(".category-title"),
-      {x: "-100%"},
+      { x: "-100%" },
       {
         x: 0,
         ease: "back.out(1.7)",
@@ -37,7 +39,7 @@ const Blog: NextPage<Props> = ({posts, category}) => {
   }, []);
   return (
     <>
-      <AppHead title="Blog - Diggy" />
+      <NextSeo title={`Category: ${capitalizeFirstLetter(unslugify(category))}`} />
       {/* <Loader>
         <span className="capitalize">{unslugify(category)}</span>
       </Loader> */}
@@ -68,7 +70,7 @@ const Blog: NextPage<Props> = ({posts, category}) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const posts = getAllPosts(
     ["slug", "title", "excerpt", "datetime", "category"],
     params!.category as string
