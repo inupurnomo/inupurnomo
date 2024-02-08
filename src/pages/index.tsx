@@ -2,10 +2,10 @@
 import React from "react";
 
 import type { GetStaticProps } from "next";
-import Loader from "@/common/components/Loader";
-import SkipToMain from "@/common/components/SkipToMain";
+import Loader from "@/common/components/elements/Loader";
+import SkipToMain from "@/common/components/elements/SkipToMain";
 import Header from "@/common/components/layouts/Header";
-import SocialLinks from "@/common/components/SocialLinks";
+import SocialLinks from "@/common/components/elements/SocialLinks";
 import Hero from "@/modules/hero";
 import About from "@/modules/about";
 import Project from "@/modules/project";

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Tag from "@/common/components/blog/Tag";
 import { CommentCount } from "disqus-react";
 
-import DateTime from "@/common/components/DateTime";
+import DateTime from "@/common/components/elements/DateTime";
 
 type Props = {
   post: {

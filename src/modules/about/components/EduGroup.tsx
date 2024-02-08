@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { EducationProps } from "../types/education";
+import { EducationProps } from "../../../common/types/education";
 
 
 const EduGroup = ({

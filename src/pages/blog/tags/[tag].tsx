@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import gsap from "gsap";
 
-import SkipToMain from "@/common/components/SkipToMain";
-import SocialLinks from "@/common/components/SocialLinks";
+import SkipToMain from "@/common/components/elements/SkipToMain";
+import SocialLinks from "@/common/components/elements/SocialLinks";
 import BlogHeader from "@/common/components/blog/BlogHeader";
 import BlogCard from "@/common/components/blog/BlogCard";
 import Footer from "@/common/components/layouts/Footer";

@@ -4,7 +4,7 @@ import Image from "@/common/components/elements/Image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import LinkButton from "@/common/components/LinkButton";
+import LinkButton from "@/common/components/elements/LinkButton";
 
 import vector from "public/images/vector.svg";
 import inupurnomo from "public/inupurnomo-illustration.webp";

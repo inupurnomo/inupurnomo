@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaRegEnvelopeOpen as EmailIcon } from "react-icons/fa";
 import { PiConfettiDuotone as ContactIcon } from "react-icons/pi";
 
-import SectionHeader from "@/common/components/SectionHeader";
+import SectionHeader from "@/common/components/layouts/SectionHeader";
 
 const Contact = () => {
   const bgImage = "url('/images/bg-gradient-2.svg')";

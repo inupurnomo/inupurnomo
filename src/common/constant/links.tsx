@@ -30,13 +30,13 @@ export const LINKS: LinkProps[] = [
     className: "bg-rose-600",
     target: "_blank",
   },
-  {
-    label: "PT Flexcode Space Teknologi",
-    icon: <BusinessIcon size={21} className="text-neutral-600" />,
-    href: "https://flexcode.co.id",
-    className: "bg-violet-800",
-    target: "_blank",
-  },
+  // {
+  //   label: "PT Flexcode Space Teknologi",
+  //   icon: <BusinessIcon size={21} className="text-neutral-600" />,
+  //   href: "https://flexcode.co.id",
+  //   className: "bg-violet-800",
+  //   target: "_blank",
+  // },
   {
     label: "Buy me a Cup of Coffee",
     icon: <CoffeeIcon size={21} className="text-neutral-600" />,

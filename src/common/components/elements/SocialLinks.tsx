@@ -1,10 +1,10 @@
 import React from "react";
 
-import { SIDENAV } from "../constant/navlink";
+import { SIDENAV } from "../../constant/navlink";
 
 import { useSection } from "@/common/context/section";
 
-import { SOCIAL_FLOATING as socialLinks } from "../constant/social";
+import { SOCIAL_FLOATING as socialLinks } from "../../constant/social";
 
 const SocialLinks = ({ page }: any) => {
   const { currentSection } = useSection();

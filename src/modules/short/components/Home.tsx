@@ -1,9 +1,9 @@
-import BreakLine from "@/common/components/BreakLine";
+import BreakLine from "@/common/components/elements/BreakLine";
 import Contact from "./Contact";
 import Hero from "./Hero";
 import Links from "./Links";
 import SocialsLinks from "./SocialsLinks";
-import PageWrapper from "@/common/components/PageWrapper";
+import PageWrapper from "@/common/components/layouts/PageWrapper";
 import clsx from "clsx";
 import { Sora } from "next/font/google";
 import Layout from "@/common/components/layouts/Layout";

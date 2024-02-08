@@ -1,4 +1,5 @@
 import { NavLinkProps, SideLinkProps } from "../types/navbars";
+
 export const SIDENAV: SideLinkProps[] = [
   {
     url: "#main",
@@ -41,7 +42,7 @@ export const NAVLINK: NavLinkProps[] = [
       </svg>
     ),
     text: "who am i?",
-    ref: "",
+    ref: "about",
   },
   {
     url: "#projects",

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import Image from "@/common/components/elements/Image";
-import Qris from "@/common/components/Qris";
+import Qris from "./Qris";
 
 import PaymentMethodButton from "./PaymentMethodButton";
 

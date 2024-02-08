@@ -4,12 +4,12 @@ import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import gsap from "gsap";
 
-import SkipToMain from "@/common/components/SkipToMain";
-import SocialLinks from "@/common/components/SocialLinks";
+import SkipToMain from "@/common/components/elements/SkipToMain";
+import SocialLinks from "@/common/components/elements/SocialLinks";
 import BlogHeader from "@/common/components/blog/BlogHeader";
 import BlogCardBox from "@/common/components/blog/BlogCardBox";
 import Footer from "@/common/components/layouts/Footer";
-import Loader from "@/common/components/Loader";
+import Loader from "@/common/components/elements/Loader";
 import { getAllPosts } from "@/common/utils/api";
 import slugify from "@/common/utils/slugify";
 import { NextSeo } from "next-seo";
