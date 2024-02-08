@@ -4,8 +4,8 @@ import { useState } from "react";
 import { PiLinkBreakDuotone as LinkIcon } from "react-icons/pi";
 
 import Sheet from "react-modal-sheet";
-import BottomSheet from "@/common/components/BottomSheet";
-import SectionHeader from "@/common/components/SectionHeader";
+import BottomSheet from "@/common/components/elements/BottomSheet";
+import SectionHeader from "@/common/components/layouts/SectionHeader";
 import { LINKS } from "@/common/constant/links";
 
 import BuyACoffee from "./BuyACoffee";

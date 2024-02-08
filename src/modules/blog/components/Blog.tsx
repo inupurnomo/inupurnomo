@@ -8,7 +8,7 @@ import { useSection } from "@/common/context/section";
 import useOnScreen from "@/common/hooks/useOnScreen";
 import useScrollActive from "@/common/hooks/useScrollActive";
 import { MdxMeta } from "@/pages/blog/posts/[slug]";
-import BlogImageCard from "@/common/components/BlogImageCard";
+import BlogImageCard from "./BlogImageCard";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

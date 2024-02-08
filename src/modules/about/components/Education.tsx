@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import EduGroup from "@/common/components/EduGroup";
+import EduGroup from "./EduGroup";
 import { EDUCATION } from "@/common/constant/education";
 
 const Education = () => {

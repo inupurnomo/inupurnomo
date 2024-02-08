@@ -1,4 +1,4 @@
-import PageHeader from "@/common/components/PageHeader";
+import PageHeader from "@/common/components/layouts/PageHeader";
 
 import BankTransfer from "./BankTransfer";
 

@@ -5,14 +5,14 @@ import type { GetStaticProps, NextPage } from "next";
 import { MdxMeta } from "./posts/[slug]";
 
 import BlogHero from "@/modules/bloghero";
-import SkipToMain from "@/common/components/SkipToMain";
-import SocialLinks from "@/common/components/SocialLinks";
+import SkipToMain from "@/common/components/elements/SkipToMain";
+import SocialLinks from "@/common/components/elements/SocialLinks";
 import BlogHeader from "@/common/components/blog/BlogHeader";
 import BlogCard from "@/common/components/blog/BlogCard";
 import Footer from "@/common/components/layouts/Footer";
 import { getAllPosts } from "@/common/utils/api";
 import { useFilter } from "@/common/context/filter";
-import Loader from "@/common/components/Loader";
+import Loader from "@/common/components/elements/Loader";
 import { NextSeo } from "next-seo";
 
 type Props = {

@@ -9,7 +9,7 @@ import { useSection } from "@/common/context/section";
 import useOnScreen from "@/common/hooks/useOnScreen";
 import useScrollActive from "@/common/hooks/useScrollActive";
 
-import AboutBgSvg from "@/common/components/AboutBgSvg";
+import AboutBgSvg from "@/common/components/elements/AboutBgSvg";
 
 import Story from "./Story";
 import Education from "./Education";

@@ -58,7 +58,7 @@ const BlogHero: React.FC = () => {
           </p>
           <p className="intro-3">
             You can follow me on my{" "}
-            <Link href={"/links"} className="link">
+            <Link href={"/me"} className="link">
               social media
             </Link>{" "}
             and{" "}

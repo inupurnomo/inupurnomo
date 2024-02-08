@@ -1,6 +1,6 @@
 import React from "react";
 
-import PageWrapper from "@/common/components/PageWrapper";
+import PageWrapper from "@/common/components/layouts/PageWrapper";
 import Layout from "@/common/components/layouts/Layout";
 import Payment from "@/modules/payment";
 import { NextSeo } from "next-seo";

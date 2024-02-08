@@ -1,7 +1,7 @@
 import React from "react";
 
 import Footer from "@/common/components/layouts/Footer";
-import LinkButton from "@/common/components/LinkButton";
+import LinkButton from "@/common/components/elements/LinkButton";
 
 import Link from "next/link";
 import { NextSeo } from "next-seo";

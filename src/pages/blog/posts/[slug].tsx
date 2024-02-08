@@ -6,14 +6,14 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useTheme } from "next-themes";
 
 import BlogHeader from "@/common/components/blog/BlogHeader";
-import SkipToMain from "@/common/components/SkipToMain";
-import SocialLinks from "@/common/components/SocialLinks";
+import SkipToMain from "@/common/components/elements/SkipToMain";
+import SocialLinks from "@/common/components/elements/SocialLinks";
 import Footer from "@/common/components/layouts/Footer";
 import markdownToHtml from "@/common/utils/markdownToHtml";
 import { getAllPosts, getPostBySlug } from "@/common/utils/api";
 import PostBody from "@/common/components/blog/PostBody";
 import Tag from "@/common/components/blog/Tag";
-import DateTime from "@/common/components/DateTime";
+import DateTime from "@/common/components/elements/DateTime";
 import HeadCategory from "@/common/components/blog/HeadCategory";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
 import { NextSeo } from "next-seo";

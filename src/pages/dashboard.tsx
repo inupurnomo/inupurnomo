@@ -1,7 +1,7 @@
 import React from "react";
 
-import Loader from "@/common/components/Loader";
-import SkipToMain from "@/common/components/SkipToMain";
+import Loader from "@/common/components/elements/Loader";
+import SkipToMain from "@/common/components/elements/SkipToMain";
 import Footer from "@/common/components/layouts/Footer";
 
 import ArchiveSection from "@/modules/archives/components/Archive";

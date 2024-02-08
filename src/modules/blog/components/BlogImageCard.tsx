@@ -6,7 +6,7 @@ import gsap from "gsap";
 import Tag from "@/common/components/blog/Tag";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import DateTime from "@/common/components/DateTime";
+import DateTime from "@/common/components/elements/DateTime";
 
 type Props = {
   post: {
