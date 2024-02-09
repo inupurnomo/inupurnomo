@@ -106,7 +106,6 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
                     alt={post.coverImageAlt || "Picture"}
                     sizes="100vw"
                     style={{ width: "100%", height: "auto" }}
-                    priority
                     width={Number(post.coverImageWidth) || 1200}
                     height={Number(post.coverImageHeight) || 700}
                   />
@@ -116,14 +115,14 @@ const BlogLayout: React.FC<Props> = ({ post }) => {
               <hr />
               {/* Disqus Comment Plugin */}
               <div className="bg-slate-50 px-6 py-6">
-                {/* <DiscussionEmbed
+                <DiscussionEmbed
                   shortname="inupurnomo"
                   config={{
                     url: canonicalUrl,
                     identifier: post.slug,
                     title: post.title,
                   }}
-                /> */}
+                />
               </div>
             </article>
           </main>

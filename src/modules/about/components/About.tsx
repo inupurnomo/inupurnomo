@@ -1,4 +1,4 @@
-import Reac, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
@@ -14,6 +14,7 @@ import AboutBgSvg from "@/common/components/elements/AboutBgSvg";
 import Story from "./Story";
 import Education from "./Education";
 import Profile from "./Profile";
+import Skills from "./Skills";
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -116,11 +117,12 @@ const About = () => {
             <h2 className="section-heading">Who am I?</h2>
           </RoughNotation>
         </div>
-        <div className="grid-cols-5 grid-rows-5 md:grid lg:grid-rows-6">
+        <div className="grid-cols-5 grid-rows-2 md:grid lg:grid-rows-4">
           <Profile />
           <Story />
           <Education />
         </div>
+        <Skills />
       </section>
 
       <AboutBgSvg />
