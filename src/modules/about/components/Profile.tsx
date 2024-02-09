@@ -4,7 +4,7 @@ import Image from "@/common/components/elements/Image";
 
 const Profile = () => {
   return (
-    <div className="col-start-1 col-end-3 row-start-2 row-end-4 flex items-center justify-center py-4 md:row-start-1 md:row-end-3 lg:col-start-1 lg:col-end-3 lg:row-end-7 lg:mb-[20%]">
+    <div className="col-start-1 col-end-3 row-start-1 row-end-5 flex items-center justify-center py-4 md:row-start-1 md:row-end-3 lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-5">
       <div className="relative w-72">
         <svg
           width="96"
