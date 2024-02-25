@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 import { FiClock as ClockIcon } from "react-icons/fi";
@@ -20,6 +23,7 @@ const ContactForm = () => {
 
   const [formErrors, setFormErrors] = useState<Partial<FormDataProps>>({});
   const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -35,31 +39,65 @@ const ContactForm = () => {
     });
   };
 
+  
+  useEffect(() => {
+    setIsSubmitDisabled(Object.values(formErrors).some((error) => error))
+    console.log(Object.values(formErrors).some((error) => error))
+  }, [formErrors]);
+  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const hasErrors = Object.values(formErrors).some((error) => error);
 
     if (!hasErrors) {
       setIsLoading(true);
-      try {
-        const response = await axios.post("/api/contact", { formData });
-        if (response.status === 200) {
-          alert("Message sent!");
-          setFormData(formInitialState);
-        }
-      } catch (error) {
-        alert(error);
-      }
-      setIsLoading(false);
+      const response = async () =>
+        await axios.post("/api/contact", { formData });
+      toast.promise(response, {
+        pending: {
+          render() {
+            return `Sending message...`;
+          },
+        },
+        success: {
+          render({ data }) {
+            setIsLoading(false);
+            return `${data?.data?.message}`;
+          },
+        },
+        error: {
+          render({ data }) {
+            setIsLoading(false);
+            return `${data}`;
+          },
+        },
+      });
+      // try {
+      //   const response = await axios.post("/api/contacts", { formData });
+      //   if (response.status === 200) {
+      //     setFormData(formInitialState);
+      //   }
+      // } catch (error) {
+      //   alert(error);
+      // }
     } else {
-      alert("Error!");
+      toast.error('Error!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
     }
   };
 
-  const isSubmitDisabled = Object.values(formErrors).some((error) => error);
-
   return (
     <>
+      <ToastContainer />
       <div className="header-contact py-4">
         <h2 className="text-xl">Or send me a message</h2>
       </div>
@@ -73,7 +111,6 @@ const ContactForm = () => {
               placeholder="Name *"
               value={formData.name}
               onChange={handleChange}
-              required
             />
             <input
               className="px-3 py-2 rounded-md focus:outline-none border dark:border-neutral-700"
@@ -82,7 +119,6 @@ const ContactForm = () => {
               placeholder="Email *"
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </div>
           <div className="w-full">
@@ -95,7 +131,6 @@ const ContactForm = () => {
               placeholder="Message *"
               value={formData.message}
               onChange={handleChange}
-              required
             ></textarea>
           </div>
           <button
