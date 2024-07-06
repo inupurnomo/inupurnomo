@@ -109,6 +109,7 @@ const ContactForm = () => {
               type="text"
               name="name"
               placeholder="Name *"
+              required
               value={formData.name}
               onChange={handleChange}
             />
@@ -117,6 +118,7 @@ const ContactForm = () => {
               type="email"
               name="email"
               placeholder="Email *"
+              required
               value={formData.email}
               onChange={handleChange}
             />
@@ -128,6 +130,7 @@ const ContactForm = () => {
               id="message"
               cols={30}
               rows={10}
+              required
               placeholder="Message *"
               value={formData.message}
               onChange={handleChange}
