@@ -44,7 +44,7 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Script
+      {/* <Script
         id="google-analytics"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -59,7 +59,7 @@ function App({ Component, pageProps }: AppProps) {
         page_path: window.location.pathname,
         });
     `}
-      </Script>
+      </Script> */}
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

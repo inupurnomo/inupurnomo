@@ -91,7 +91,7 @@ const Hero = () => {
         aria-hidden="true"
         className="bg-text pointer-events-none absolute -top-36 z-0 rotate-12 scale-150 select-none text-center text-9xl font-bold tracking-wide text-gray-100 dark:text-[#1f2e3a]"
       >
-        UI/UX DESIGNER WEB DEVELOPER SOFTWARE ENGINER FULL-STACK DEVELOPER
+        UI/UX DESIGNER WEB DEVELOPER SOFTWARE ENGINEER FULL-STACK DEVELOPER
       </span>
 
       <div className="image-animation z-10 mx-auto mt-0 select-none px-0 xs:mt-6 sm:mt-14 lg:-mt-20 lg:basis-1/3 lg:p-0">

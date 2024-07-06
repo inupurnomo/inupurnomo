@@ -2,6 +2,18 @@ import { CareerProps } from '../types/careers';
 
 export const CAREERS: CareerProps[] = [
   {
+    position: 'Tenaga Ahli',
+    company: 'Divisi Profesi dan Pengamanan Mabes Polri',
+    logo: null,
+    location: 'Jakarta, ID',
+    location_type: 'On Site',
+    type: 'Freelance',
+    start_date: '2024-02',
+    end_date: '2024-06',
+    industry: 'polri',
+    link: 'https://polri.go.id',
+  },
+  {
     position: 'Full-stack Developer',
     company: 'Telemetri BWS Maluku',
     logo: null,
