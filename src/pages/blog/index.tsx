@@ -34,7 +34,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
             <BlogHero />
             {searchText === "" && postLanguage === "All" && (
               <>
-                <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+                <div className="px-4 sm:px-8 md:px-20 max-w-6xl mx-auto">
                   <h2 className="text-2xl font-medium mb-2">Featured Posts</h2>
                   <ul>
                     {posts.map(
@@ -51,7 +51,7 @@ const Blog: NextPage<Props> = ({ posts }) => {
                 />
               </>
             )}
-            <div className="px-4 sm:px-8 md:px-20 max-w-4xl mx-auto">
+            <div className="px-4 sm:px-8 md:px-20 max-w-6xl mx-auto">
               <h2 className="text-2xl font-medium mb-2">
                 {searchText === "" && postLanguage === "All" && "All Posts"}
                 {searchText !== "" && <div>Search result(s)</div>}

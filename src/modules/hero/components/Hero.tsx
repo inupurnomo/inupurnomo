@@ -190,7 +190,7 @@ const Hero = () => {
           </span>
         </div>
         <span className="text-xl">
-          Based in Bandung<span className="ml-1">🇮🇩</span>
+          Based in Jakarta<span className="ml-1">🇮🇩</span>
         </span>
         <div className="my-4 mt-2 md:mb-4">
           <p className="mb-1">

@@ -16,12 +16,12 @@ export const PROJECTS: ProjectItemProps[] = [
       />
     ),
     description:
-      "My portfolio website v1 developed with NextJS, TypeScript, and TailwindCSS. In this project, styled-components library is used for styling and multiple themes supported.",
+      "E-vidence, is an application used to record evidence obtained from violations committed by members. This application is used only for internal police.",
     tags: ["Laravel"],
     stacks: [],
     link_demo: "#",
     link_github: "#",
-    is_show: false,
+    is_show: true,
   },
   {
     title: "E-Library Mabes Polri - Frontend",
@@ -36,12 +36,12 @@ export const PROJECTS: ProjectItemProps[] = [
       />
     ),
     description:
-      "My portfolio website v1 developed with NextJS, TypeScript, and TailwindCSS. In this project, styled-components library is used for styling and multiple themes supported.",
+      "E-Library is an application used for police document database. Using Laravel for backend and Next.js for frontend. This application is used only for internal police.",
     tags: ["NextJS", "TypeScript", "TailwindCSS"],
     stacks: [],
     link_demo: "#",
     link_github: "#",
-    is_show: false,
+    is_show: true,
   },
   {
     title: "DIVPROPAM Mabes Polri - Landing Page",
@@ -56,12 +56,12 @@ export const PROJECTS: ProjectItemProps[] = [
       />
     ),
     description:
-      "My portfolio website v1 developed with NextJS, TypeScript, and TailwindCSS. In this project, styled-components library is used for styling and multiple themes supported.",
+      "Landing page for the Division of Profession and Security (DIVPROPAM) page of the Indonesian National Police Headquarters.",
     tags: ["NextJS", "TypeScript", "TailwindCSS"],
     stacks: [],
     link_demo: "#",
     link_github: "#",
-    is_show: false,
+    is_show: true,
   },
   {
     title: "Diggy Portfolio V1",
@@ -96,7 +96,7 @@ export const PROJECTS: ProjectItemProps[] = [
       />
     ),
     description:
-      "An monitoring web application where users can browse vehicle condition with Arduino",
+      "An monitoring web application where users can browse vehicle condition with Arduino.",
     tags: ["NodeJS", "ExpressJS", "REST-API"],
     stacks: [],
     link_demo: "https://diggyvec.vercel.app",

@@ -40,8 +40,7 @@ const Project = () => {
         </RoughNotation>
       </div>
       <span className="project-desc mb-4 block text-center" ref={elementRef}>
-        “Talk is cheap. Show me the code”? I got you. <br />
-        Here's some of my open-source projects
+        Here's some of my projects
       </span>
       
       <ProjectList />

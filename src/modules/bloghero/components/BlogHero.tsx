@@ -39,7 +39,7 @@ const BlogHero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-4 pt-20 md:pt-24 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto"
+      className="py-4 pt-20 md:pt-24 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto"
     >
       <div className="mt-10">
         <div className="overflow-hidden py-1">

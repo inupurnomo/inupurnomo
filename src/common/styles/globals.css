@@ -50,7 +50,7 @@
     @apply mb-20 mt-16 min-h-[70vh];
   }
   .blog-section {
-    @apply py-8 px-4 sm:px-8 md:px-20 max-w-4xl mx-auto;
+    @apply py-8 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto;
   }
   .glassmorphism {
     @apply bg-clip-padding backdrop-filter backdrop-blur-xl !bg-opacity-50 dark:!bg-opacity-60;

@@ -2,7 +2,7 @@ const canonicalUrl = "https://inupurnomo.my.id";
 const metaImage = `${process.env.NEXT_PUBLIC_URL}/inupurnomo-og.png`;
 const imageAlt = `INUPURNOMO portfolio website`;
 const metaDescription =
-  "INUPURNOMO is a full-stack developer based in Bandung, Indonesia. He is passionate about writing codes and developing web applications to solve real-life challenges.";
+  "INUPURNOMO is a full-stack developer based in Jakarta, Indonesia. He is passionate about writing codes and developing web applications to solve real-life challenges.";
 
 const defaultSEOConfig = {
   title: undefined,

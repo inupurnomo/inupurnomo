@@ -25,7 +25,7 @@ const ProjectArchive = () => {
         </Link>
       </div>
       <div className="others mb-16 text-center">
-        Explore my others projects on{" "}
+        Explore my open source’s projects on{" "}
         <a
           href="https://github.com/inupurnomo"
           className="link-outline whitespace-nowrap font-medium text-marrsgreen underline dark:text-carrigreen"
