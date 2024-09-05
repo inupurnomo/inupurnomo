@@ -4,7 +4,27 @@ import { ProjectItemProps } from "../types/projects";
 
 export const PROJECTS: ProjectItemProps[] = [
   {
-    title: "E-vidence Mabes Polri",
+    title: "Unit Paminal | DIVPROPAM - Mabes Polri",
+    type: "Backend, Frontend",
+    image: (
+      <Image
+        src={'/projects/unit-paminal.webp'}
+        sizes="100vw"
+        fill
+        alt="Unit Paminal"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    description:
+      "Unit Paminal, is a web-based application used to find out the progress of public complaints being investigated by the Paminal Bureau of the Indonesian National Police Propam Division.",
+    tags: ["Laravel"],
+    stacks: [],
+    link_demo: "#",
+    link_github: "#",
+    is_show: true,
+  },
+  {
+    title: "E-vidence | DIVPROPAM - Mabes Polri",
     type: "Backend, Frontend",
     image: (
       <Image
@@ -24,7 +44,7 @@ export const PROJECTS: ProjectItemProps[] = [
     is_show: true,
   },
   {
-    title: "E-Library Mabes Polri - Frontend",
+    title: "E-Library | DIVPROPAM - Mabes Polri - Frontend",
     type: "Backend, Frontend",
     image: (
       <Image
@@ -44,7 +64,7 @@ export const PROJECTS: ProjectItemProps[] = [
     is_show: true,
   },
   {
-    title: "DIVPROPAM Mabes Polri - Landing Page",
+    title: "Landing Page | DIVPROPAM - Mabes Polri",
     type: "Frontend",
     image: (
       <Image
