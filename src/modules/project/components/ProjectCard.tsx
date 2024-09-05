@@ -49,7 +49,7 @@ const ProjectCard = ({ index, project }: ProjectsProps) => {
   }, []);
 
   return (
-    <div ref={sectionRef} className={`md:basis-1/2 md:px-2 py-1 md:py-2`}>
+    <div ref={sectionRef} className={`md:basis-1/2 md:px-2 py-1 md:py-2 group-hover:[&:not(:hover)]:opacity-30 transition-all duration-300`}>
       <div className={`bg-cardlight dark:bg-carddark rounded-b-md shadow-md`}>
         <div className={`project-card project-card-${index}`}>
           <div className="project-title overflow-hidden">
