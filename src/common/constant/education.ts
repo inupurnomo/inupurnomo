@@ -2,8 +2,8 @@ import { EducationProps } from "../types/education";
 export const EDUCATION: EducationProps[] = [
   {
     school: "Telkom University",
-    major: "Informatic's Engineering, (S.Kom)",
-    logo: "",
+    major: "Informatic's, (S.Kom)",
+    logo: "/images/education/tel-u.svg",
     location: "Bandung",
     degree: "Bachelor's degree",
     start_year: 2016,
@@ -18,7 +18,7 @@ export const EDUCATION: EducationProps[] = [
   {
     school: "Telkom Schools",
     major: "Computer and Network Engineering",
-    logo: "",
+    logo: "/images/education/telkom-schools.png",
     location: "Purwokerto",
     degree: "",
     start_year: 2013,

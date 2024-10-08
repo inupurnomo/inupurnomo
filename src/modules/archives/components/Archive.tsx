@@ -4,11 +4,9 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
-import { PROJECT_ARCHIVE } from "@/common/constant/archive";
+import { PROJECTS as projectsArchive } from "@/common/constant/projects";
 
 const Archive = () => {
-  const projectsArchive = PROJECT_ARCHIVE.reverse();
-
   const { theme, setTheme } = useTheme();
   const themeBtnRef = useRef<HTMLButtonElement>(null);
   // update theme button aria-label according to theme value
@@ -107,7 +105,7 @@ const Archive = () => {
                       <div className="block sm:hidden">
                         <a
                           className="group/link inline-flex items-baseline text-base font-medium leading-tight text-carddark hover:text-marrsgreen focus-visible:text-marrsgreen dark:text-textlight sm:hidden"
-                          href={proj.link}
+                          href={proj.demo}
                           target="_blank"
                           rel="noreferrer"
                           aria-label="Threadable"
@@ -145,7 +143,7 @@ const Archive = () => {
                   </td>
                   <td className="hidden py-4 pr-4 align-top lg:table-cell">
                     <ul className="flex -translate-y-1.5 flex-wrap">
-                      {proj.techList.map((li) => (
+                      {proj.stacks.map((li) => (
                         <li key={li} className={`my-1 mr-1.5`}>
                           <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-marrslight dark:text-carrilight">
                             {li}
@@ -159,7 +157,7 @@ const Archive = () => {
                       <li className="mb-1 flex items-center">
                         <a
                           className="group/link inline-flex items-baseline text-sm font-medium leading-tight text-slate-400 hover:text-marrsgreen focus-visible:text-marrsgreen"
-                          href={proj.link}
+                          href={proj.demo}
                           target="_blank"
                           rel="noreferrer"
                           aria-label="apps.apple.com"
@@ -167,7 +165,7 @@ const Archive = () => {
                           <span>
                             {" "}
                             <span className="inline-block">
-                              {proj.linkName && proj.linkName}
+                              {proj.demo && proj.demo}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
