@@ -63,7 +63,7 @@ const ProjectCard = ({ index, project }: ProjectsProps) => {
             <div className="overflow-hidden">
               <div className="project-text flex items-center justify-between">
                 <a
-                  href={project.link_demo}
+                  href={project.demo}
                   target="_blank"
                   className="text-marrsgreen dark:text-carrigreen text-lg my-1 font-medium hover:text-marrslight dark:hover:text-carrilight"
                 >
@@ -71,7 +71,7 @@ const ProjectCard = ({ index, project }: ProjectsProps) => {
                 </a>
                 <div className="flex items-center space-x-5 sm:space-x-3 my-2 sm:my-0 mr-[0.1rem]">
                   <a
-                    href={project.link_github}
+                    href={project.github}
                     title={`See '${project.title}' on Github`}
                     target="_blank"
                     rel="noreferrer"
@@ -91,7 +91,7 @@ const ProjectCard = ({ index, project }: ProjectsProps) => {
                     </svg>
                   </a>
                   <a
-                    href={project.link_demo}
+                    href={project.demo}
                     title={`See live demo of '${project.title}'`}
                     target="_blank"
                     rel="noreferrer"
