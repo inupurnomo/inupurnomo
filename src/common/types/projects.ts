@@ -1,14 +1,15 @@
 export interface ProjectItemProps {
+  year: string;
   title: string;
   slug?: string;
   type: string;
   description: string;
   image: JSX.Element;
-  tags: string[];
-  link_demo?: string;
-  link_github?: string;
-  stacks?: string[];
+  demo?: string;
+  github?: string;
+  stacks: string[];
   content?: string;
+  madeAt: string; 
   is_show?: boolean;
   is_featured?: boolean;
 }

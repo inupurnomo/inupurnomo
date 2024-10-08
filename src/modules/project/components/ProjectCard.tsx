@@ -122,7 +122,7 @@ const ProjectCard = ({ index, project }: ProjectsProps) => {
               aria-label={`Tech Stack used in ${project.title}`}
               className={`flex flex-wrap mt-2 mb-4 md:mt-2 md:mb-6 text-sm overflow-hidden`}
             >
-              {project.tags.map((tag) => (
+              {project.stacks.map((tag) => (
                 <li
                   key={tag}
                   className={`project-tags mr-2 my-1 bg-marrslight dark:bg-carridark py-1 px-2 rounded`}
