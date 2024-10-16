@@ -11,9 +11,9 @@ type Props = {
 const Footer = ({ noPadding = false }: Props) => {
   return (
     <footer
-      className={`${noPadding ? "pb-4" : "pb-24"} md:pb-4 text-center mt-auto border border-transparent bg-[#adadad] dark:bg-[#1B2731]`}
+      className={`pt-8 text-center mt-auto border-transparent relative`}
     >
-      <div className="h-16 container mx-auto rounded-lg flex justify-center items-center mb-8 -mt-8 bg-[#dedede] dark:bg-[#1e1e1e]">
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-16 container mx-auto rounded-lg flex justify-center items-center -mb-8 bg-[#dedede] dark:bg-[#1e1e1e]">
         <div className="flex justify-center space-x-6">
           {socialLinks.map((social, index:number) => (
             <a
@@ -27,7 +27,7 @@ const Footer = ({ noPadding = false }: Props) => {
           ))}
         </div>
       </div>
-      <div className="w-full max-w-contentContainer mx-auto flex flex-col md:flex-row justify-between items-center md:px-16 mb-6">
+      <div className={`pt-16 ${noPadding ? "py-4" : "pb-24"} md:pb-4 w-full max-w-contentContainer mx-auto flex flex-col md:flex-row justify-between items-center md:px-16 bg-[#adadad] dark:bg-[#1B2731]`}>
         <div className="flex items-center gap-2">
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-marrslight dark:bg-carrilight opacity-75"></span>

@@ -39,8 +39,7 @@ const CareerCard = ({
       new Date(end_date || Date.now()),
       new Date(start_date),
     ) %
-      12) +
-    1;
+      12);
 
   const durationText = `${durationYears > 0 ? `${durationYears} Year${durationYears > 1 ? 's' : ''}, ` : ''}${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
 
@@ -92,7 +91,7 @@ const CareerCard = ({
                 •
               </span>
               <span className='text-neutral-500 dark:text-neutral-500'>
-                {durationText}
+                ~ {durationText}
               </span>
               <span className='hidden text-neutral-300 dark:text-neutral-700 lg:block'>
                 •

@@ -18,7 +18,7 @@ export const PROJECTS: ProjectItemProps[] = [
     ),
     description:
       "Dashboard Integration, is an application used to record evidence obtained from violations committed by members. This application is used only for internal police.",
-    stacks: ["Next.js", "TailwindCSS"],
+    stacks: ["Laravel", "Oracle Database", "Next.js", "TailwindCSS"],
     madeAt: "Divpropam Mabes Polri",
     demo: "#",
     github: "#",
@@ -39,7 +39,7 @@ export const PROJECTS: ProjectItemProps[] = [
     ),
     description:
       "Unit Paminal, is a web-based application used to find out the progress of public complaints being investigated by the Paminal Bureau of the Indonesian National Police Propam Division.",
-    stacks: ["Laravel", "Bootstrap", "MySQL"],
+    stacks: ["Laravel", "MySQL", "Bootstrap"],
     madeAt: "Divpropam Mabes Polri",
     demo: "#",
     github: "#",
@@ -47,7 +47,7 @@ export const PROJECTS: ProjectItemProps[] = [
   },
   {
     year: "2024",
-    title: "E-vidence | DIVPROPAM - Mabes Polri",
+    title: "E-Vidence | DIVPROPAM - Mabes Polri",
     type: "Backend, Frontend",
     image: (
       <Image
@@ -60,7 +60,7 @@ export const PROJECTS: ProjectItemProps[] = [
     ),
     description:
       "E-vidence, is an application used to record evidence obtained from violations committed by members. This application is used only for internal police.",
-    stacks: ["Laravel"],
+    stacks: ["Laravel", "Oracle Database", "Bootstrap"],
     madeAt: "Divpropam Mabes Polri",
     demo: "#",
     github: "#",
@@ -81,7 +81,7 @@ export const PROJECTS: ProjectItemProps[] = [
     ),
     description:
       "E-Library is an application used for police document database. Using Laravel for backend and Next.js for frontend. This application is used only for internal police.",
-    stacks: ["NextJS", "TypeScript", "TailwindCSS"],
+    stacks: ["Laravel", "Oracle Database", "Bootstrap", "NextJS", "TypeScript", "TailwindCSS"],
     madeAt: "Divpropam Mabes Polri",
     demo: "#",
     github: "#",

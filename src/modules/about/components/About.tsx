@@ -15,6 +15,7 @@ import Story from "./Story";
 import Education from "./Education";
 import Profile from "./Profile";
 import Skills from "./Skills";
+import Link from "next/link";
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -121,6 +122,25 @@ const About = () => {
           <Profile />
           <Story />
           <Education />
+        </div>
+        <div className="my-6 flex justify-center py-1">
+          <Link href={"/about"} className="link">
+            More About Me{" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
         </div>
         <Skills />
       </section>

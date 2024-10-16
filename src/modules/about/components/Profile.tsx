@@ -23,7 +23,7 @@ const Profile = () => {
             width={1700}
             height={1790}
             alt="inupurnomo profile picture"
-            className="rounded-md"
+            className="rounded-md opacity-50 hover:opacity-100 hover:scale-125"
           />
         </div>
 
