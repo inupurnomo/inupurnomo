@@ -1,10 +1,4 @@
 import React, { useEffect, useRef } from "react";
-
-import Loader from "@/common/components/elements/Loader";
-import SkipToMain from "@/common/components/elements/SkipToMain";
-import Footer from "@/common/components/layouts/Footer";
-
-import { NextSeo } from "next-seo";
 import { Tabs } from "@/common/components/elements/Tabs";
 
 import {

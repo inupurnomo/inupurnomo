@@ -19,7 +19,7 @@ export const LINKS: LinkProps[] = [
   {
     label: "Resume & Curriculum Vitae",
     icon: <PDFIcon size={21} className="text-neutral-600" />,
-    href: "https://inupurnomo.my.id/resume.pdf",
+    href: process.env.NEXT_PUBLIC_RESUME_URL ?? '#',
     className: "bg-sky-700",
     target: "_blank",
   },

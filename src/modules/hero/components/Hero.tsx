@@ -82,6 +82,8 @@ const Hero = () => {
     //   });
   }, [q]);
 
+  const resume = process.env.NEXT_PUBLIC_RESUME_URL;
+
   return (
     <section
       ref={sectionRef}
@@ -140,31 +142,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* <div className="image-animation z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:mt-0 px-0 mx-auto lg:p-0 lg:basis-1/3">
-        <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
-          <div className="absolute pointer-events-none scale-90 xs:scale-95 mx-auto">
-            <Image
-              src={inupurnomo}
-              width={1177}
-              height={1374}
-              priority
-              id="character-illustration"
-              aria-label="INUPURNOMO character illustration levitating with a Macbook"
-              alt="INUPURNOMO character illustration"
-            />
-          </div>
-          <div className="laptop absolute top-14 sm:top-16 left-0 scale-[.41] xs:scale-[.45] pointer-events-none">
-            <Image
-              src={laptop}
-              width={559}
-              height={386}
-              aria-hidden="true"
-              alt="Laptop illustration"
-            />
-          </div>
-        </div>
-      </div> */}
-
       <div className="relative z-10 lg:basis-2/3">
         <span className="font-medium text-marrsgreen dark:text-carrigreen lg:text-lg">
           Hi 👋🏾! my name is
@@ -212,9 +189,10 @@ const Hero = () => {
             Open-source
           </LinkButton>
           <LinkButton
-            href={`/resume.pdf`}
+            href={resume ?? '#'}
             title="My full resume"
             outline={true}
+            targetBlank
           >
             Resume
           </LinkButton>
