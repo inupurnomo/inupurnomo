@@ -7,6 +7,7 @@ import {
 } from "react-icons/bi";
 
 import { LinkProps } from "../types/link";
+import { PROFILE as profile } from "./about";
 
 export const LINKS: LinkProps[] = [
   {
@@ -19,7 +20,7 @@ export const LINKS: LinkProps[] = [
   {
     label: "Resume & Curriculum Vitae",
     icon: <PDFIcon size={21} className="text-neutral-600" />,
-    href: process.env.NEXT_PUBLIC_RESUME_URL ?? '#',
+    href: profile.resume ?? '#',
     className: "bg-sky-700",
     target: "_blank",
   },

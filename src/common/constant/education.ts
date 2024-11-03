@@ -13,6 +13,7 @@ export const EDUCATION: EducationProps[] = [
       "Studied computer science, software development, DevOps",
       "Conducted an Undergraduate Thesis on Monitoring System Design to Prevent Overheat on a Motorcycle Engines",
       "GPA 3.15/4.00",
+      "470 points of English Proficiency Test on Telkom University"
     ],
   },
   {
@@ -24,7 +25,7 @@ export const EDUCATION: EducationProps[] = [
     start_year: 2013,
     end_year: 2016,
     link: "https://smktelkom-pwt.sch.id",
-    list: ["Computer and Network Engineering", "CISCO CCNA certification"],
+    list: ["Project : Local Telephone System Development using VOIP Technology", "CISCO CCNA certification"],
   },
   {
     school: "Junior High School - Kebumen",

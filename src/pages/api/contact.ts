@@ -4,19 +4,22 @@ import { sendMessage } from "@/services/contact";
 
 const FORM_API_KEY = process.env.CONTACT_FORM_API_KEY as string;
 
+interface IEmailForm {
+  [key: string]: string
+}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    const { formData } = req.body;
+    const body:IEmailForm = req.body;
 
     const updatedFormData = new FormData();
     updatedFormData.append('access_key', FORM_API_KEY);
 
-    for (const key in formData) {
-      updatedFormData.append(key, formData[key]);
+    for (const key in body) {
+      updatedFormData.append(key, body[key]);
     }
 
     const response = await sendMessage(updatedFormData);

@@ -12,11 +12,6 @@ const sora = Sora({ subsets: ["latin"] });
 const Home = () => {
   return (
     <>
-      {/* <div
-        className={`max-w-[480px] mx-auto bg-white md:shadow-xl md:rounded-lg md:my-3 ${clsx(
-          sora.className
-        )}`}
-      > */}
       <Layout>
         <PageWrapper>
           <Hero />
@@ -28,7 +23,6 @@ const Home = () => {
             <Contact />
           </div>
         </PageWrapper>
-        {/* </div> */}
       </Layout>
     </>
   );

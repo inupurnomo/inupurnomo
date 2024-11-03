@@ -10,6 +10,7 @@ import useScrollActive from "@/common/hooks/useScrollActive";
 import Form from "./ContactForm";
 import SocialList from "./SocialList";
 import BookACall from "./BookACall";
+import Separator from "@/common/components/elements/Separator";
 
 const Contact = () => {
   const { theme } = useTheme();
@@ -47,6 +48,7 @@ const Contact = () => {
       <div className="contact text-left">
         <SocialList />
         <BookACall />
+        <Separator />
         <Form />
       </div>
     </section>

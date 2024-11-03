@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import Sheet from "react-modal-sheet";
 
 import "react-spring-bottom-sheet/dist/style.css";

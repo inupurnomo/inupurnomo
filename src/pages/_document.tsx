@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Html, Head, Main, NextScript } from "next/document";
-import { GoogleTagManager } from '@next/third-parties/google' 
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const Document = () => {
   return (
@@ -48,11 +48,19 @@ const Document = () => {
           href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
           rel="stylesheet"
         />
-        <GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+        <GoogleTagManager
+          gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
       </Head>
       <body className="bg-bglight dark:bg-bgdark">
-      <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Main />
         <NextScript />
       </body>

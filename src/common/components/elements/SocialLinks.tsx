@@ -5,25 +5,36 @@ import { SIDENAV } from "../../constant/navlink";
 import { useSection } from "@/common/context/section";
 
 import { SOCIAL_FLOATING as socialLinks } from "../../constant/social";
+import Link from "next/link";
 
 const SocialLinks = ({ page }: any) => {
   const { currentSection } = useSection();
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {page === "index" ? (
         <div className="hidden z-10 fixed left-10 bottom-1/3 md:flex flex-col w-6 h-52 items-center justify-between">
           {SIDENAV.map((nav) => {
             return (
-              <a
+              <Link
                 title={nav.text}
                 href={nav.url}
+                onClick={handleScroll}
                 key={nav.url}
                 className={`transition-all outline-marrsdark dark:outline-textlight hover:bg-marrsgreen dark:hover:bg-carrigreen ${
                   currentSection === nav.ref.toLowerCase()
                     ? "bg-marrsgreen dark:bg-carrigreen rotate-0"
                     : "opacity-50 focus-visible:opacity-100 hover:opacity-80 rotate-45 hover:rotate-12"
                 } w-3 h-3 border-2 border-marrsgreen dark:border-carrigreen`}
-              ></a>
+              ></Link>
             );
           })}
         </div>

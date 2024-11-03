@@ -7,7 +7,7 @@ import { HiChevronRight } from 'react-icons/hi';
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { CareerProps } from '@/common/types/careers';
-import cn from '@/common/libs/cn';
+import { cn } from '@/common/libs/cn';
 
 const CareerCard = ({
   position,

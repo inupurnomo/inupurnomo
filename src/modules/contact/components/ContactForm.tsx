@@ -1,59 +1,36 @@
 import React, { useEffect, useState } from "react";
 
+import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 import { FiClock as ClockIcon } from "react-icons/fi";
-
-interface FormDataProps {
+import InputField from "@/common/components/elements/InputField";
+import { Button } from "@/common/components/ui/button";
+interface IFormEmail {
   name: string;
   email: string;
   message: string;
 }
 
-const formInitialState: FormDataProps = {
-  name: "",
-  email: "",
-  message: "",
-};
-
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormDataProps>(formInitialState);
-
-  const [formErrors, setFormErrors] = useState<Partial<FormDataProps>>({});
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<IFormEmail>();
   const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+  const [buttonText, setButtonText] = useState("Send Email");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const regexEmail =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setFormErrors({
-      ...formErrors,
-      [name]: value ? undefined : `${name} is required`,
-    });
-  };
-
-  
-  useEffect(() => {
-    setIsSubmitDisabled(Object.values(formErrors).some((error) => error))
-    console.log(Object.values(formErrors).some((error) => error))
-  }, [formErrors]);
-  
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const hasErrors = Object.values(formErrors).some((error) => error);
-
-    if (!hasErrors) {
-      setIsLoading(true);
-      const response = async () =>
-        await axios.post("/api/contact", { formData });
+  async function handleFormSubmit(payload: IFormEmail) {
+    setIsLoading(true);
+    try {
+      const response = async () => await axios.post("/api/contact", payload);
       toast.promise(response, {
         pending: {
           render() {
@@ -62,6 +39,8 @@ const ContactForm = () => {
         },
         success: {
           render({ data }) {
+            setIsSuccess(true);
+            reset();
             setIsLoading(false);
             return `${data?.data?.message}`;
           },
@@ -73,27 +52,20 @@ const ContactForm = () => {
           },
         },
       });
-      // try {
-      //   const response = await axios.post("/api/contacts", { formData });
-      //   if (response.status === 200) {
-      //     setFormData(formInitialState);
-      //   }
-      // } catch (error) {
-      //   alert(error);
-      // }
-    } else {
-      toast.error('Error!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
     }
-  };
+  }
+
+  useEffect(() => {
+    setButtonText(isLoading ? "Sending your message..." : "Send Email");
+    if (!isLoading && isSuccess) setButtonText("Your email sent successfully");
+    const timeout = setTimeout(() => {
+      setButtonText("Send Email");
+    }, 5000);
+    return () => clearTimeout(timeout);
+  }, [isLoading, isSuccess]);
 
   return (
     <>
@@ -102,48 +74,44 @@ const ContactForm = () => {
         <h2 className="text-xl">Or send me a message</h2>
       </div>
       <div className="body-contact">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              className="px-3 py-2 rounded-md focus:outline-none border dark:border-neutral-700"
-              type="text"
+        <form
+          onSubmit={handleSubmit(handleFormSubmit)}
+          className="flex flex-col space-y-4 transition-all duration-300"
+        >
+          <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
+            <InputField
               name="name"
-              placeholder="Name *"
-              required
-              value={formData.name}
-              onChange={handleChange}
+              rule={{ required: true }}
+              register={register}
+              error={errors}
             />
-            <input
-              className="px-3 py-2 rounded-md focus:outline-none border dark:border-neutral-700"
-              type="email"
+            <InputField
               name="email"
-              placeholder="Email *"
-              required
-              value={formData.email}
-              onChange={handleChange}
+              rule={{
+                required: true,
+                pattern: {
+                  value: regexEmail,
+                  message: "please enter a valid email",
+                },
+              }}
+              register={register}
+              error={errors}
             />
           </div>
-          <div className="w-full">
-            <textarea
-              className="px-3 py-2 rounded-md focus:outline-none w-full border dark:border-neutral-700"
-              name="message"
-              id="message"
-              cols={30}
-              rows={10}
-              required
-              placeholder="Message *"
-              value={formData.message}
-              onChange={handleChange}
-            ></textarea>
-          </div>
-          <button
-            className="rounded-md bg-marrsgreen dark:bg-carrigreen px-3 py-2 disabled hover:bg-marrslight hover:dark:bg-carrilight transition-all duration-300"
+          <InputField
+            name="message"
+            rule={{ required: true }}
+            register={register}
+            error={errors}
+            isTextArea
+          />
+          <Button
+            disabled={isLoading}
             type="submit"
-            data-umami-event="Send Contact Message"
-            disabled={isSubmitDisabled}
+            className="rounded-lg bg-neutral-700 px-4 py-2 text-white shadow-md hover:bg-neutral-800 hover:shadow-lg"
           >
-            {isLoading ? "Sending Message" : "Send Message"}
-          </button>
+            {buttonText}
+          </Button>
           <div className="flex items-center gap-2 dark:text-neutral-400 my-5">
             <ClockIcon />
             <div className="text-sm">

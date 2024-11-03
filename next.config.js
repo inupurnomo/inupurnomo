@@ -26,7 +26,7 @@ module.exports = {
     unoptimized: true,
   },
   compiler: {
-    removeConsole: true,
+    removeConsole: false,
   },
 };
 

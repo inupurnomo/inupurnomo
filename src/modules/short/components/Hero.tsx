@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "@/common/components/elements/Image";
+import { PROFILE as profile } from "@/common/constant/about";
 
 const Hero = () => {
   const coverImage =
@@ -23,8 +24,8 @@ const Hero = () => {
         data-aos-duration="1000"
       >
         <Image
-          src="/images/me.webp"
-          alt="inupurnomo"
+          src={profile.avatar}
+          alt={profile.username}
           width={100}
           height={100}
           rounded="rounded-full"
@@ -38,16 +39,15 @@ const Hero = () => {
           data-aos-duration="1000"
         >
           <div className="flex flex-col gap-1 items-center text-center">
-            <h1 className="text-2xl font-medium">Ilham Ibnu Purnomo</h1>
+            <h1 className="text-2xl font-medium">{profile.name}</h1>
             <div className="flex gap-2 text-[15px] text-neutral-500">
-              <span>Bandung, Indonesia</span>
+              <span>{profile.base}</span>
               <span className="text-neutral-300">•</span>
-              <span>he/him</span>
+              <span>{profile.pronounce}</span>
             </div>
           </div>
           <p className="text-center text-neutral-600 text-[15px] md:text-base mx-1.5 leading-relaxed">
-            Seasoned software engineer especially in frontend side, with a
-            passion for creating pixel-perfect web experiences.
+            {profile.description}
           </p>
         </div>
       </div>

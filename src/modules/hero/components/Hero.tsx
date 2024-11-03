@@ -8,6 +8,7 @@ import LinkButton from "@/common/components/elements/LinkButton";
 
 import laptop from "public/laptop-illustration.webp";
 import { Typewriter } from "react-simple-typewriter";
+import { PROFILE as profile } from "@/common/constant/about";
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -82,8 +83,6 @@ const Hero = () => {
     //   });
   }, [q]);
 
-  const resume = process.env.NEXT_PUBLIC_RESUME_URL;
-
   return (
     <section
       ref={sectionRef}
@@ -148,18 +147,14 @@ const Hero = () => {
         </span>
         <div className="overflow-hidden">
           <h1 className="text-animation my-1 text-4xl font-semibold md:my-2 md:text-5xl lg:text-7xl">
-            Ilham Ibnu Purnomo
+            {profile.name}
           </h1>
         </div>
         <div className="overflow-hidden">
           <span className="text-animation block text-2xl font-medium text-marrsgreen dark:text-carrigreen md:my-3 md:text-3xl lg:text-5xl">
             A{" "}
             <Typewriter
-              words={[
-                "Full-stack Developer",
-                "Web Developer",
-                "Software Developer",
-              ]}
+              words={profile.skills}
               loop={0}
               cursor
               cursorStyle="|"
@@ -167,7 +162,7 @@ const Hero = () => {
           </span>
         </div>
         <span className="text-xl">
-          Based in Jakarta<span className="ml-1">🇮🇩</span>
+          Based in {profile.base}<span className="ml-1">🇮🇩</span>
         </span>
         <div className="my-4 mt-2 md:mb-4">
           <p className="mb-1">
@@ -189,7 +184,7 @@ const Hero = () => {
             Open-source
           </LinkButton>
           <LinkButton
-            href={resume ?? '#'}
+            href={profile.resume ?? '#'}
             title="My full resume"
             outline={true}
             targetBlank

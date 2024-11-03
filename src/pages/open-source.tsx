@@ -1,7 +1,7 @@
 import React from "react";
 
 import Footer from "@/common/components/layouts/Footer";
-import Header from "@/common/components/layouts/Header";
+import Header from "@/common/components/layouts/Navbar";
 import Source from "@/modules/opensource";
 import { getRepos } from "@/services/github";
 

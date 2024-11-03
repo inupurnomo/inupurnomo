@@ -1,7 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export type SocialProps = {
   title: string;
+  label: string;
+  description: string;
   href: string;
   icon: JSX.Element;
   isShow?: boolean;
@@ -12,13 +14,14 @@ export type SocialProps = {
   eventName?: string;
   hideIcon?: boolean;
   type?: string;
+  iconClass: string;
 };
 
 export type SocialFloatProps = {
   title: string;
   href: string;
   svg: JSX.Element;
-}
+};
 
 export interface SocialItemProps {
   title: string;

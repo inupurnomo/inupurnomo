@@ -160,7 +160,7 @@ const Archive = () => {
                           href={proj.demo}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="apps.apple.com"
+                          aria-label={proj.demo}
                         >
                           <span>
                             {" "}

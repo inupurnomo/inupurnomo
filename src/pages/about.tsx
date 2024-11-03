@@ -18,7 +18,6 @@ const AboutPage = () => {
           <SkipToMain />
           <main>
             <div className="section">
-              
               <About />
             </div>
           </main>

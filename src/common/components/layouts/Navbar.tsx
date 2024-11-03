@@ -44,6 +44,16 @@ const Header = () => {
     setNavClassList(_classList);
   }, [scroll.y, scroll.lastY]);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <header className="md:flex">
       <div
@@ -65,8 +75,9 @@ const Header = () => {
               <ul className="flex justify-evenly items-center py-2 pt-3">
                 {NAVLINK.map((navLink, index: number) => (
                   <li key={index}>
-                    <a
+                    <Link
                       href={navLink.url}
+                      onClick={handleScroll}
                       className={`text-sm md:text-lg flex flex-col items-center w-[4.5rem] md:w-auto dark:fill-textlight md:mr-6 md:hover:text-marrsgreen md:dark:hover:text-carrigreen link-outline ${
                         currentSection === navLink.ref &&
                         "text-marrsgreen dark:text-carrilight fill-marrsgreen dark:fill-carrigreen"
@@ -74,7 +85,7 @@ const Header = () => {
                     >
                       <span className="md:hidden">{navLink.svg}</span>
                       <span className="whitespace-nowrap">{navLink.text}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

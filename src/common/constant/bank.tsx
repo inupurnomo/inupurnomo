@@ -20,6 +20,15 @@ export const BANK_ACCOUNTS: BankAccountsProps[] = [
     className: "border-[#2ecdd2] hover:bg-[#2ecdd2] hover:text-white",
   },
   {
+    number: "1884712221",
+    holder: "Ilham Ibnu Purnomo",
+    bank: "Bank BNI",
+    type: "mastercard",
+    logo: "/images/payment/bni.png",
+    color: "#f15a23",
+    className: "border-[#f15a23] hover:bg-[#f15a23] hover:text-white",
+  },
+  {
     number: "102908848956",
     holder: "Ilham Ibnu Purnomo",
     bank: "Bank Jago",
@@ -28,15 +37,6 @@ export const BANK_ACCOUNTS: BankAccountsProps[] = [
     color: "#feab2f",
     className: "border-[#feab2f] hover:bg-[#feab2f] hover:text-white",
   },
-  // {
-  //   number: "#",
-  //   holder: "Ilham Ibnu Purnomo",
-  //   bank: "Bank Mandiri",
-  //   type: "mastercard",
-  //   logo: "/images/payment/mandiri.png",
-  //   color: "#064c90",
-  //   className: "border-[#064c90] hover:bg-[#064c90] hover:text-white",
-  // },
   // {
   //   number: "#",
   //   holder: "Ilham Ibnu Purnomo",

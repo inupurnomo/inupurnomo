@@ -17,6 +17,7 @@ const AccountCard = ({
   className,
 }: BankAccountsProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const gradientCard = isHovered
     ? "url('/images/bg-gradient-1.svg'), url('/images/shiny_card_animated.svg')"
@@ -24,8 +25,12 @@ const AccountCard = ({
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(number);
-      alert(`${number} Copied!`);
+      await navigator.clipboard.writeText(number).then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      });
     } catch (err) {
       // console.error("Failed to copy: ", err);
     }
@@ -69,13 +74,15 @@ const AccountCard = ({
               ))}
             </div>
             <div
-              className="flex items-center gap-1 cursor-pointer text-xs border py-1 px-1.5 rounded-full border-neutral-300 group-hover:border-white"
+              className="flex items-center gap-1 cursor-pointer text-xs border py-1 px-1.5 rounded-full border-neutral-300 group-hover:border-white hover:bg-neutral-500/60 duration-100"
+              title="Click to copy"
               onClick={handleCopy}
               data-umami-event={`Copy : Account Number ${bank}`}
             >
               <CopyIcon size={14} />
               <span>Copy</span>
             </div>
+            {isCopied && <span className="text-xs ml-2">Copied!</span>}
           </div>
         </div>
 
