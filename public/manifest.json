@@ -8,6 +8,8 @@
   "orientation": "any",
   "scope": "/",
   "start_url": "/",
+  "id": "/",
+  "lang": "en",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
