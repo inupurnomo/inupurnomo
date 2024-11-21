@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
+
+module.exports = withPWA({
   async redirects() {
     return [
       {
@@ -28,7 +32,7 @@ module.exports = {
   compiler: {
     removeConsole: false,
   },
-};
+});
 
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
