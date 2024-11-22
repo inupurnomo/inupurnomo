@@ -18,7 +18,7 @@ const RepoCard = ({ repos }: any) => {
       <h1 className="text-center font-titleFont font-semibold text-textPrimary">
         Some open source repositories I’ve published or contributed to
       </h1>
-      <div className="mt-3 grid w-full grid-cols-1 gap-4 px-12 md:grid-cols-2 mdl:px-0">
+      <div className="mt-3 grid w-full grid-cols-1 gap-4 md:grid-cols-2 mdl:px-0">
         {repos &&
           repos
             .sort(
