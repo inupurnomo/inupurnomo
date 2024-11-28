@@ -4,7 +4,6 @@ import Footer from "@/common/components/layouts/Footer";
 import Source from "@/modules/opensource";
 import { getRepos } from "@/services/github";
 import SkipToMain from "@/common/components/elements/SkipToMain";
-import Archives from "@/modules/archives";
 import Loader from "@/common/components/elements/Loader";
 import { NextSeo } from "next-seo";
 

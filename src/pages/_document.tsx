@@ -22,23 +22,29 @@ const Document = () => {
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#000000" />
 
-        <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <link
           rel="apple-touch-icon"
           sizes="152x152"
-          href="/icons/touch-icon-ipad.png"
+          href="/icons/apple-touch-icon-152x152.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/icons/touch-icon-iphone-retina.png"
+          href="/icons/apple-touch-icon-180x180.png"
         />
         <link
           rel="apple-touch-icon"
-          sizes="167x167"
-          href="/icons/touch-icon-ipad-retina.png"
+          sizes="144x144"
+          href="/icons/apple-touch-icon-180x180.png"
         />
 
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="72x72"
+          href="/icons/favicon-72x72.png"
+        />
         <link
           rel="icon"
           type="image/png"
